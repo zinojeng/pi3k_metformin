@@ -1,0 +1,11 @@
+# 原始 PDF 為出版社著作權檔案，不入版控（轉檔後的 .md 保留供 grep 驗證）
+原始PDF/*.pdf
+# 中繼工作檔
+scratch/
+# 憑證
+.env
+*.key
+# macOS
+.DS_Store
+Icon
+Icon?
