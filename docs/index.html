@@ -141,6 +141,9 @@
   .rcard.crit h3 { color: var(--crit); }
   .rcard.warn { border-left-color: var(--warn); }
   .rcard.warn h3 { color: var(--warn); }
+  .ex { background: var(--surface-2); border: 1px solid var(--line); border-radius: 6px; padding: 10px 14px; margin: 8px 0 4px; font-size: 14px; }
+  .exday { font-weight: 700; font-variant-numeric: tabular-nums; color: var(--accent-ink); }
+  .ex .ladder { font-family: ui-monospace, SFMono-Regular, Menlo, monospace; font-size: 13px; display: block; margin-top: 6px; overflow-x: auto; white-space: nowrap; }
   .src { color: var(--muted); font-size: 12px; margin-top: 2px; }
   footer { margin-top: 40px; border-top: 1px solid var(--line); padding-top: 16px; color: var(--muted); font-size: 12.5px; }
   footer p { margin: 0 0 8px; }
@@ -337,6 +340,8 @@
   function li(text, src) {
     return '<li>' + text + (src ? '<div class="src">依據：' + src + '</div>' : '') + '</li>';
   }
+  function md(date) { return (date.getMonth() + 1) + '/' + date.getDate(); }
+  function addDays(n) { var d = new Date(); d.setDate(d.getDate() + n); return d; }
   function card(title, items, cls) {
     return '<div class="rcard ' + (cls || '') + '"><h3>' + title + '</h3><ul>' + items.join('') + '</ul></div>';
   }
@@ -488,8 +493,21 @@
           act.push(li('降至 ≤160 → <strong>降一階</strong>（' + (nextDown[dose] || '已最低') + '）恢復；<strong>30 天內再次 >500 → 永久停藥</strong>。', 'FDA 仿單 Table 2'));
         }
       }
-      if (grade >= 2) out.push(card('抗癌藥（' + drugName + '）處置', act));
-      else out.push(card('抗癌藥（' + drugName + '）處置', act));
+      out.push(card('抗癌藥（' + drugName + '）處置', act));
+
+      /* 21-day countdown worked example (alpelisib, Grade 2, ongoing) */
+      if (isAlp && grade === 2 && ctx === 'ongoing') {
+        var exLadder = dose === 300 ? '300 → <strong>250</strong> → 200 mg → 低於 200 mg 即停藥'
+                   : dose === 250 ? '300 → 250 → <strong>200</strong> mg → 低於 200 mg 即停藥'
+                   : '300 → 250 → 200 mg → <strong>已是最低劑量，若仍需減量依仿單應停藥</strong>';
+        out.push('<div class="rcard"><h3>21 天倒數怎麼算（以今天為例）</h3><ul>'
+          + li('<span class="exday">今天 ' + md(addDays(0)) + '</span>：FPG ' + Math.round(fpg) + ' mg/dL（Grade 2）→ alpelisib <strong>' + dose + ' mg 照常續用</strong>，同一天起始或加強降糖藥（例如 metformin 1000 → 2000 mg/day）。<strong>倒數從加強降糖治療的今天開始。</strong>')
+          + li('倒數期間：依監測排程回驗 FPG。<strong>任何一次 ≤160 mg/dL → 倒數解除</strong>，alpelisib 維持 ' + dose + ' mg，不減量。')
+          + li('<span class="exday">判定日 ' + md(addDays(21)) + '</span>（第 21 天）：FPG 仍 >160 mg/dL → 表示此劑量的血糖負荷靠降糖藥壓不住，<strong>alpelisib 減一階</strong>後續用，並依新劑量重新評估。<div class="ex"><span class="ladder">減量階梯：' + ladder + '</span></div>')
+          + li('請把判定日 <strong>' + md(addDays(21)) + '</strong> 寫進行事曆或提醒系統；到期未達標即回報醫師執行減量。')
+          + li('注意：若期間血糖惡化升級為 Grade 3（>250），改走 Grade 3 流程（中斷用藥；其 21 天條款的後果是<strong>永久停藥</strong>，不是減量）。', 'FDA 仿單 Table 3')
+          + '</ul></div>');
+      }
     }
 
     /* ---------- ANTI-HYPERGLYCEMIC ESCALATION ---------- */
