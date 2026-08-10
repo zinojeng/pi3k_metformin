@@ -1,11 +1,18 @@
-# 原始 PDF 為出版社著作權檔案，不入版控（轉檔後的 .md 保留供 grep 驗證）
 原始PDF/*.pdf
-# 中繼工作檔
 scratch/
-# 憑證
-.env
-*.key
-# macOS
 .DS_Store
 Icon
-Icon?
+.env
+
+# 全文轉檔與擷取稿（版權考量，不上傳公開 repo）
+原始PDF/
+來源/
+稽核/
+章節/
+scratch/
+scripts/
+.env
+MISSING_FULLTEXT*.md
+PI3Kα抑制劑相關高血糖與metformin.md
+撰寫方法論.md
+Icon

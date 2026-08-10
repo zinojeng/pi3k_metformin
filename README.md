@@ -8,6 +8,15 @@
 
 ---
 
+## 🆕 臨床處置指引與決策輔助工具（2026-08 新增）
+
+| 檔案 | 內容 |
+|---|---|
+| [`PROTOCOL.md`](PROTOCOL.md) | **臨床處置指引（clinical protocol）**：治療前風險分層與預防性 metformin、監測時程、FPG 分層之抗癌藥／降糖藥同步調整、insulin 使用時機、PI3Ki 減量／暫停／永久停藥與 rechallenge、DKA/HHS 急症處置、特殊情境速查，以及 2025–2026 證據更新（ADA Standards of Care 2026 抗癌藥高血糖專節、FDA inavolisib 仿單 ketoacidosis 警語、ESMO Open 2026、GO39374 等） |
+| [`docs/index.html`](docs/index.html) | **互動式決策輔助網頁**（護理師／研究人員用）：輸入紅旗症狀、藥物與劑量、FPG、目前降糖藥與臨床情境 → 依仿單規則產生分級處置建議（抗癌藥動作、降糖藥升階、監測、照會、常見錯誤）。啟用 GitHub Pages（Settings → Pages → main branch `/docs`）即可線上使用 |
+
+---
+
 ## 主要成品
 
 | 檔案 | 內容 |

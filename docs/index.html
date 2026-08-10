@@ -1,0 +1,578 @@
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>PI3K 抑制劑高血糖處置助手</title>
+<style>
+  :root {
+    --bg: #F6F8F9;
+    --surface: #FFFFFF;
+    --surface-2: #EEF3F5;
+    --ink: #182830;
+    --muted: #5A6E77;
+    --line: #D8E2E6;
+    --accent: #0E7C86;
+    --accent-ink: #0A5A61;
+    --accent-soft: #E3F1F2;
+    --ok: #2C7A46;      --ok-soft: #E6F2EA;
+    --warn: #8A5D14;    --warn-soft: #FBF1DC;
+    --danger: #B23A2E;  --danger-soft: #FBEAE7;
+    --crit: #8C1D18;    --crit-soft: #F7E2E1;
+    --focus: #0E7C86;
+  }
+  @media (prefers-color-scheme: dark) {
+    :root:not([data-theme="light"]) {
+      --bg: #0F181D;
+      --surface: #17232A;
+      --surface-2: #1E2D35;
+      --ink: #E4ECEF;
+      --muted: #93A6AE;
+      --line: #2A3A42;
+      --accent: #4CB8C0;
+      --accent-ink: #7ACDD3;
+      --accent-soft: #12333A;
+      --ok: #6FC48C;      --ok-soft: #14301F;
+      --warn: #DBAD55;    --warn-soft: #33270F;
+      --danger: #E08074;  --danger-soft: #3A1712;
+      --crit: #EA9490;    --crit-soft: #401210;
+      --focus: #4CB8C0;
+    }
+  }
+  :root[data-theme="dark"] {
+    --bg: #0F181D;
+    --surface: #17232A;
+    --surface-2: #1E2D35;
+    --ink: #E4ECEF;
+    --muted: #93A6AE;
+    --line: #2A3A42;
+    --accent: #4CB8C0;
+    --accent-ink: #7ACDD3;
+    --accent-soft: #12333A;
+    --ok: #6FC48C;      --ok-soft: #14301F;
+    --warn: #DBAD55;    --warn-soft: #33270F;
+    --danger: #E08074;  --danger-soft: #3A1712;
+    --crit: #EA9490;    --crit-soft: #401210;
+    --focus: #4CB8C0;
+  }
+  * { box-sizing: border-box; }
+  body {
+    margin: 0;
+    background: var(--bg);
+    color: var(--ink);
+    font-family: "PingFang TC", "Noto Sans TC", "Microsoft JhengHei", system-ui, sans-serif;
+    line-height: 1.65;
+    font-size: 16px;
+  }
+  .wrap { max-width: 760px; margin: 0 auto; padding: 24px 16px 80px; }
+  header.top { border-bottom: 2px solid var(--accent); padding-bottom: 18px; margin-bottom: 24px; }
+  .eyebrow {
+    font-size: 12px; letter-spacing: .14em; text-transform: uppercase;
+    color: var(--accent-ink); font-weight: 600; margin: 0 0 6px;
+  }
+  h1 { font-size: 26px; margin: 0 0 6px; text-wrap: balance; }
+  .sub { color: var(--muted); margin: 0; font-size: 14px; }
+  .card {
+    background: var(--surface); border: 1px solid var(--line);
+    border-radius: 8px; padding: 20px; margin-bottom: 16px;
+  }
+  fieldset { border: 0; padding: 0; margin: 0; }
+  legend, .step-title { display: flex; align-items: baseline; gap: 10px; font-weight: 700; font-size: 17px; padding: 0; margin-bottom: 4px; }
+  .step-no {
+    flex: none; width: 24px; height: 24px; border-radius: 50%;
+    background: var(--accent); color: var(--surface);
+    font-size: 13px; font-weight: 700; display: inline-flex;
+    align-items: center; justify-content: center; transform: translateY(3px);
+  }
+  .step-hint { color: var(--muted); font-size: 13.5px; margin: 0 0 12px 34px; }
+  .opts { display: flex; flex-direction: column; gap: 8px; margin-left: 34px; }
+  .opts.row { flex-direction: row; flex-wrap: wrap; gap: 8px 16px; }
+  label.opt {
+    display: flex; gap: 9px; align-items: flex-start; cursor: pointer;
+    padding: 8px 10px; border: 1px solid var(--line); border-radius: 6px;
+    background: var(--surface);
+  }
+  label.opt:has(input:checked) { border-color: var(--accent); background: var(--accent-soft); }
+  label.opt input { margin-top: 4px; accent-color: var(--accent); }
+  label.opt .t { font-size: 15px; }
+  label.opt .d { display: block; font-size: 12.5px; color: var(--muted); }
+  .inline-field { display: flex; gap: 10px; align-items: center; margin-left: 34px; flex-wrap: wrap; }
+  input[type=number], select {
+    font: inherit; color: var(--ink); background: var(--surface);
+    border: 1px solid var(--line); border-radius: 6px; padding: 8px 10px;
+    font-variant-numeric: tabular-nums;
+  }
+  input[type=number] { width: 120px; }
+  input:focus-visible, select:focus-visible, button:focus-visible, label.opt:has(input:focus-visible) {
+    outline: 2px solid var(--focus); outline-offset: 2px;
+  }
+  .conv { color: var(--muted); font-size: 13.5px; font-variant-numeric: tabular-nums; }
+  button.go {
+    font: inherit; font-weight: 700; font-size: 17px;
+    background: var(--accent); color: #FFFFFF; border: 0; border-radius: 8px;
+    padding: 13px 28px; cursor: pointer; width: 100%;
+  }
+  button.go:hover { background: var(--accent-ink); }
+  :root[data-theme="dark"] button.go, .darkbtn { color: #0F181D; }
+  button.ghost {
+    font: inherit; font-size: 14px; background: none; border: 1px solid var(--line);
+    color: var(--muted); border-radius: 6px; padding: 6px 14px; cursor: pointer;
+  }
+  /* ---- result ---- */
+  #result { margin-top: 28px; }
+  .banner { border-radius: 8px; padding: 18px 20px; margin-bottom: 16px; border: 1px solid; }
+  .banner h2 { margin: 0 0 4px; font-size: 21px; }
+  .banner p { margin: 0; font-size: 14.5px; }
+  .banner .grade-tag { font-size: 12px; letter-spacing: .1em; font-weight: 700; text-transform: uppercase; display: block; margin-bottom: 6px; }
+  .sev-ok     { background: var(--ok-soft);     border-color: var(--ok);     color: var(--ok); }
+  .sev-warn   { background: var(--warn-soft);   border-color: var(--warn);   color: var(--warn); }
+  .sev-danger { background: var(--danger-soft); border-color: var(--danger); color: var(--danger); }
+  .sev-crit   { background: var(--crit-soft);   border-color: var(--crit);   color: var(--crit); }
+  .banner.sev-ok h2, .banner.sev-ok p { color: var(--ink); }
+  .banner.sev-warn h2, .banner.sev-warn p { color: var(--ink); }
+  .banner.sev-danger h2, .banner.sev-danger p { color: var(--ink); }
+  .banner.sev-crit h2, .banner.sev-crit p { color: var(--ink); }
+  .rcard {
+    background: var(--surface); border: 1px solid var(--line); border-left: 4px solid var(--accent);
+    border-radius: 8px; padding: 16px 20px; margin-bottom: 12px;
+  }
+  .rcard h3 { margin: 0 0 8px; font-size: 15px; letter-spacing: .06em; color: var(--accent-ink); text-transform: uppercase; }
+  .rcard ul { margin: 0; padding-left: 20px; }
+  .rcard li { margin-bottom: 6px; font-size: 15px; }
+  .rcard li strong { font-weight: 700; }
+  .rcard.crit { border-left-color: var(--crit); }
+  .rcard.crit h3 { color: var(--crit); }
+  .rcard.warn { border-left-color: var(--warn); }
+  .rcard.warn h3 { color: var(--warn); }
+  .src { color: var(--muted); font-size: 12px; margin-top: 2px; }
+  footer { margin-top: 40px; border-top: 1px solid var(--line); padding-top: 16px; color: var(--muted); font-size: 12.5px; }
+  footer p { margin: 0 0 8px; }
+  .hide { display: none; }
+  @media print {
+    body { background: #FFFFFF; color: #000000; }
+    .card, button.go, .no-print { display: none; }
+    #result { margin-top: 0; }
+  }
+  @media (prefers-reduced-motion: no-preference) {
+    #result { scroll-margin-top: 12px; }
+  }
+</style>
+
+<div class="wrap">
+  <header class="top">
+    <p class="eyebrow">PI3K 抑制劑相關高血糖 · 護理／研究人員決策輔助</p>
+    <h1>血糖異常，下一步怎麼做？</h1>
+    <p class="sub">適用 alpelisib（PIQRAY®）與 inavolisib（ITOVEBI®）。依序完成五步，系統依 FDA／EMA 仿單與專家共識產生處置建議。<strong>劑量決策一律以空腹血糖（FPG）為準，不可用隨機血糖。</strong></p>
+  </header>
+
+  <form id="form" onsubmit="return false;">
+
+    <div class="card">
+      <fieldset>
+        <legend><span class="step-no">1</span>紅旗篩檢 — 先於一切血糖分層</legend>
+        <p class="step-hint">任一項勾選，即為急症流程；不必等血糖數值。</p>
+        <div class="opts">
+          <label class="opt"><input type="checkbox" name="flag" value="意識改變、嗜睡或反應遲鈍"><span class="t">意識改變、嗜睡或反應遲鈍</span></label>
+          <label class="opt"><input type="checkbox" name="flag" value="脫水徵象、持續嘔吐或完全無法進食進水"><span class="t">脫水徵象、持續嘔吐或完全無法進食進水</span></label>
+          <label class="opt"><input type="checkbox" name="flag" value="呼吸急促或深快呼吸（Kussmaul）"><span class="t">呼吸急促或深快呼吸（Kussmaul）</span></label>
+          <label class="opt"><input type="checkbox" name="flag" value="發燒、疑似感染或敗血症"><span class="t">發燒、疑似感染或敗血症</span></label>
+          <label class="opt"><input type="checkbox" name="flag" value="血酮或尿酮陽性"><span class="t">血酮或尿酮陽性<span class="d">血酮優先；使用 SGLT2i 者即使血糖不高也可能酮體陽性（euglycemic DKA）</span></span></label>
+          <label class="opt"><input type="checkbox" name="flag" value="血糖於數小時內快速惡化"><span class="t">血糖於數小時內快速惡化（tempo 比絕對值重要）</span></label>
+        </div>
+      </fieldset>
+    </div>
+
+    <div class="card">
+      <fieldset>
+        <legend><span class="step-no">2</span>目前的 PI3K 抑制劑</legend>
+        <p class="step-hint">兩藥的停藥與減量規則完全不同，不可互相套用。</p>
+        <div class="opts">
+          <label class="opt"><input type="radio" name="drug" value="alp" checked><span class="t">Alpelisib（PIQRAY®）<span class="d">減量階梯 300 → 250 → 200 mg QD；低於 200 mg 即停藥</span></span></label>
+          <label class="opt"><input type="radio" name="drug" value="ina"><span class="t">Inavolisib（ITOVEBI®）<span class="d">減量階梯 9 → 6 → 3 mg QD；無法耐受第二次減量即永久停藥</span></span></label>
+        </div>
+        <div class="inline-field" style="margin-top:12px">
+          <span>目前劑量</span>
+          <select id="doseAlp">
+            <option value="300">300 mg QD（起始）</option>
+            <option value="250">250 mg QD（已減一階）</option>
+            <option value="200">200 mg QD（已減兩階）</option>
+          </select>
+          <select id="doseIna" class="hide">
+            <option value="9">9 mg QD（起始）</option>
+            <option value="6">6 mg QD（已減一階）</option>
+            <option value="3">3 mg QD（已減兩階）</option>
+          </select>
+        </div>
+      </fieldset>
+    </div>
+
+    <div class="card">
+      <fieldset>
+        <legend><span class="step-no">3</span>本次空腹血糖（FPG）</legend>
+        <p class="step-hint">必須是空腹值。非空腹之異常值請先安排空腹複驗，勿據以調藥。</p>
+        <div class="inline-field">
+          <input type="number" id="fpg" min="20" max="1500" step="1" placeholder="例如 220" aria-label="空腹血糖數值">
+          <select id="unit" aria-label="單位">
+            <option value="mgdl">mg/dL</option>
+            <option value="mmol">mmol/L</option>
+          </select>
+          <span class="conv" id="conv"></span>
+        </div>
+      </fieldset>
+    </div>
+
+    <div class="card">
+      <fieldset>
+        <legend><span class="step-no">4</span>目前使用中的降血糖藥</legend>
+        <p class="step-hint">可複選；用於決定下一步加藥或上調。</p>
+        <div class="opts">
+          <label class="opt"><input type="checkbox" id="m-none" value="none"><span class="t">尚未使用任何降血糖藥</span></label>
+          <label class="opt"><input type="checkbox" class="med" id="m-met" value="met"><span class="t">Metformin</span></label>
+        </div>
+        <div class="inline-field hide" id="metDoseRow" style="margin-top:10px">
+          <span>Metformin 目前劑量</span>
+          <select id="metDose">
+            <option value="500">500 mg QD</option>
+            <option value="1000">500 mg BID</option>
+            <option value="1500">早 500／晚 1000 mg</option>
+            <option value="2000">1000 mg BID（最大 2000 mg/day）</option>
+          </select>
+        </div>
+        <div class="opts" style="margin-top:8px">
+          <label class="opt"><input type="checkbox" class="med" id="m-sglt2" value="sglt2"><span class="t">SGLT2 抑制劑（empagliflozin／dapagliflozin 等）</span></label>
+          <label class="opt"><input type="checkbox" class="med" id="m-tzd" value="tzd"><span class="t">Pioglitazone</span></label>
+          <label class="opt"><input type="checkbox" class="med" id="m-dpp4" value="dpp4"><span class="t">DPP-4 抑制劑</span></label>
+          <label class="opt"><input type="checkbox" class="med" id="m-insulin" value="insulin"><span class="t">Insulin</span></label>
+          <label class="opt"><input type="checkbox" class="med" id="m-su" value="su"><span class="t">Sulfonylurea（glimepiride 等）</span></label>
+        </div>
+        <div class="inline-field" style="margin-top:12px">
+          <span>最近一次 eGFR</span>
+          <select id="egfr">
+            <option value="na">未知／未驗</option>
+            <option value="60">≥60</option>
+            <option value="45">45–59</option>
+            <option value="30">30–44</option>
+            <option value="0">&lt;30</option>
+          </select>
+          <span class="conv">mL/min/1.73m²</span>
+        </div>
+      </fieldset>
+    </div>
+
+    <div class="card">
+      <fieldset>
+        <legend><span class="step-no">5</span>臨床情境</legend>
+        <p class="step-hint">影響「維持原劑量或降階恢復」與「是否永久停藥」的判定。</p>
+        <div class="opts">
+          <label class="opt"><input type="radio" name="ctx" value="ongoing" checked><span class="t">治療中，例行監測發現血糖異常（首次或非復發）</span></label>
+          <label class="opt"><input type="radio" name="ctx" value="held"><span class="t">抗癌藥已因高血糖暫停中，正在評估何時恢復</span></label>
+          <label class="opt"><input type="radio" name="ctx" value="recur"><span class="t">復發事件<span class="d">alpelisib：同一事件已持續超過 21 天未達標；inavolisib：30 天內同級復發</span></span></label>
+        </div>
+        <div class="inline-field hide" id="heldRow" style="margin-top:10px">
+          <span>已暫停幾天？</span>
+          <input type="number" id="heldDays" min="0" max="90" step="1" value="3">
+          <span>天</span>
+        </div>
+      </fieldset>
+    </div>
+
+    <button class="go" id="goBtn" type="button">產生處置建議</button>
+  </form>
+
+  <section id="result" aria-live="polite"></section>
+
+  <footer>
+    <p class="no-print"><button class="ghost" onclick="window.print()">列印本次建議</button></p>
+    <p><strong>本工具僅供臨床決策輔助，不取代醫囑、仿單全文與機構 protocol。</strong>任何劑量調整與停藥決定應由主治醫師確認；急症一律先聯絡值班醫師。</p>
+    <p>依據：FDA／EMA alpelisib（PIQRAY）與 inavolisib（ITOVEBI）仿單、SOLAR-1 AE 專文（Rugo, Ann Oncol 2020）、INAVO120（Turner, NEJM 2024）、Tankova 2022 共識、Gallagher 2024 Delphi、Goncalves 2022、Jhaveri 2026。完整條文見同一 repo 之 <a href="https://github.com/zinojeng/pi3k_metformin" style="color:var(--accent-ink)">臨床處置指引</a>。版本 2026-08。</p>
+  </footer>
+</div>
+
+<script>
+(function () {
+  var $ = function (id) { return document.getElementById(id); };
+
+  // drug switch
+  document.querySelectorAll('input[name=drug]').forEach(function (r) {
+    r.addEventListener('change', function () {
+      var ina = document.querySelector('input[name=drug]:checked').value === 'ina';
+      $('doseAlp').classList.toggle('hide', ina);
+      $('doseIna').classList.toggle('hide', !ina);
+    });
+  });
+
+  // context switch
+  document.querySelectorAll('input[name=ctx]').forEach(function (r) {
+    r.addEventListener('change', function () {
+      var held = document.querySelector('input[name=ctx]:checked').value === 'held';
+      $('heldRow').classList.toggle('hide', !held);
+    });
+  });
+
+  // metformin dose row
+  $('m-met').addEventListener('change', function () {
+    $('metDoseRow').classList.toggle('hide', !this.checked);
+    if (this.checked) $('m-none').checked = false;
+  });
+  $('m-none').addEventListener('change', function () {
+    if (this.checked) {
+      document.querySelectorAll('.med').forEach(function (c) { c.checked = false; });
+      $('metDoseRow').classList.add('hide');
+    }
+  });
+  document.querySelectorAll('.med').forEach(function (c) {
+    c.addEventListener('change', function () { if (this.checked) $('m-none').checked = false; });
+  });
+
+  // unit conversion hint
+  function updConv() {
+    var v = parseFloat($('fpg').value);
+    if (isNaN(v)) { $('conv').textContent = ''; return; }
+    if ($('unit').value === 'mmol') {
+      $('conv').textContent = '≈ ' + Math.round(v * 18) + ' mg/dL';
+    } else {
+      $('conv').textContent = '≈ ' + (v / 18).toFixed(1) + ' mmol/L';
+    }
+  }
+  $('fpg').addEventListener('input', updConv);
+  $('unit').addEventListener('change', updConv);
+
+  function li(text, src) {
+    return '<li>' + text + (src ? '<div class="src">依據：' + src + '</div>' : '') + '</li>';
+  }
+  function card(title, items, cls) {
+    return '<div class="rcard ' + (cls || '') + '"><h3>' + title + '</h3><ul>' + items.join('') + '</ul></div>';
+  }
+
+  $('goBtn').addEventListener('click', function () {
+    var out = [];
+    var flags = Array.prototype.map.call(document.querySelectorAll('input[name=flag]:checked'), function (c) { return c.value; });
+    var drug = document.querySelector('input[name=drug]:checked').value; // alp | ina
+    var isAlp = drug === 'alp';
+    var drugName = isAlp ? 'Alpelisib' : 'Inavolisib';
+    var dose = isAlp ? parseInt($('doseAlp').value, 10) : parseInt($('doseIna').value, 10);
+    var lowest = isAlp ? 200 : 3;
+    var nextDown = isAlp ? { 300: '250 mg QD', 250: '200 mg QD', 200: null } : { 9: '6 mg QD', 6: '3 mg QD', 3: null };
+    var fpgRaw = parseFloat($('fpg').value);
+    var fpg = $('unit').value === 'mmol' ? fpgRaw * 18 : fpgRaw;
+    var ctx = document.querySelector('input[name=ctx]:checked').value;
+    var heldDays = parseInt($('heldDays').value, 10) || 0;
+    var meds = {
+      none: $('m-none').checked, met: $('m-met').checked, sglt2: $('m-sglt2').checked,
+      tzd: $('m-tzd').checked, dpp4: $('m-dpp4').checked, insulin: $('m-insulin').checked, su: $('m-su').checked
+    };
+    var metDose = parseInt($('metDose').value, 10);
+    var egfr = $('egfr').value;
+
+    if (isNaN(fpg) && flags.length === 0) {
+      out.push('<div class="banner sev-warn"><h2>請輸入空腹血糖值</h2><p>沒有 FPG 數值也沒有勾選紅旗，無法產生建議。</p></div>');
+      render(out); return;
+    }
+
+    /* ---------- RED FLAG PATH ---------- */
+    if (flags.length > 0) {
+      out.push('<div class="banner sev-crit"><span class="grade-tag">緊急流程</span><h2>疑似高血糖急症（DKA／HHS）風險 — 立即通報，勿等下次抽血</h2><p>勾選項目：' + flags.join('；') + '</p></div>');
+      out.push(card('立即行動（依序執行）', [
+        li('<strong>立即通知主治或值班醫師</strong>；病人在門診或居家時，指示直接前往急診。'),
+        li('抽血：血糖、<strong>血酮</strong>、電解質（Na⁺/K⁺）、腎功能、血液氣體分析；計算有效滲透壓。', 'Tankova 2022；Jhaveri 2026'),
+        li('酮體陽性或疑似 DKA／HHS：<strong>停用口服降血糖藥</strong>，改為靜脈輸液 ＋ insulin，於住院環境處置。<strong>不可以「PI3Ki 高血糖會自己恢復」為由延遲 insulin。</strong>', 'Tankova 2022；FDA 仿單'),
+        li('<strong>暫停 ' + drugName + '</strong>，後續由腫瘤科依仿單決定恢復或停用。', 'FDA 仿單'),
+        li('使用 SGLT2i 者：注意 <strong>euglycemic DKA</strong> — 血糖 200 多也可能酮酸中毒；本次事件後由醫師重新評估 SGLT2i 之去留。', 'Bowman 2017 個案；Delphi 2024')
+      ], 'crit'));
+      out.push(card('照會', [
+        li('內分泌／糖尿病專科：<strong>急會診</strong>。'),
+        li('通報腫瘤科主治醫師與研究團隊（如為試驗個案，依 protocol 通報 SAE 時程）。')
+      ]));
+      render(out); return;
+    }
+
+    /* ---------- GRADE ---------- */
+    var grade, gname, sev;
+    if (fpg > 500)      { grade = 4; gname = 'FPG >500 mg/dL（>27.8 mmol/L）｜Grade 4'; sev = 'sev-crit'; }
+    else if (fpg > 250) { grade = 3; gname = 'FPG >250–500 mg/dL（13.9–27.8 mmol/L）｜Grade 3'; sev = 'sev-danger'; }
+    else if (fpg > 160) { grade = 2; gname = 'FPG >160–250 mg/dL（8.9–13.9 mmol/L）｜Grade 2'; sev = 'sev-warn'; }
+    else if (fpg > 100) { grade = 1; gname = 'FPG 高於正常上限–160 mg/dL（–8.9 mmol/L）｜Grade 1'; sev = 'sev-ok'; }
+    else                { grade = 0; gname = 'FPG 於正常範圍'; sev = 'sev-ok'; }
+
+    /* ---------- RESUME CONTEXT ---------- */
+    if (ctx === 'held') {
+      if (fpg <= 160) {
+        out.push('<div class="banner sev-ok"><span class="grade-tag">恢復評估</span><h2>FPG 已 ≤160 mg/dL — 符合恢復 ' + drugName + ' 的門檻</h2><p>暫停第 ' + heldDays + ' 天達標。恢復劑量依下列規則，由醫師確認後執行。</p></div>');
+        if (isAlp) {
+          out.push(card('Alpelisib 恢復劑量', [
+            li('自 Grade 3／4 事件恢復：<strong>降一個劑量階</strong>（300→250→200 mg）。目前 ' + dose + ' mg' + (nextDown[dose] ? '，恢復劑量為 <strong>' + nextDown[dose] + '</strong>。' : '，已是最低劑量 200 mg——若仍需減量，依仿單應永久停藥，請與主治醫師討論。'), 'FDA 仿單 Table 3'),
+            li('自 Grade 2（未曾停藥情境）：本情境通常不適用；若為醫師個別決定之暫停，恢復劑量由醫師判定。')
+          ]));
+        } else {
+          var sameDose = heldDays <= 7;
+          out.push(card('Inavolisib 恢復劑量（依達標速度）', [
+            li(sameDose
+              ? '暫停 <strong>≤7 天</strong>內達標：以<strong>原劑量 ' + dose + ' mg QD</strong> 恢復。'
+              : '暫停 <strong>≥8 天</strong>才達標：<strong>降一個劑量階</strong>恢復。目前 ' + dose + ' mg' + (nextDown[dose] ? '，恢復劑量為 <strong>' + nextDown[dose] + '</strong>。' : '，已是最低劑量 3 mg——無法再減量時依仿單永久停藥，請與主治醫師討論。'), 'FDA 仿單 Table 2'),
+            li('若本次為 Grade 2（160–250）事件：不論天數，以<strong>原劑量</strong>恢復。', 'FDA 仿單 Table 2')
+          ]));
+        }
+        out.push(card('恢復時的低血糖陷阱', [
+          li('<strong>恢復前先下修 insulin／sulfonylurea 劑量</strong>——抗癌藥暫停期間血糖回落，原劑量降糖藥會造成低血糖；恢復抗癌藥後再依血糖回調。', 'EMA inavolisib SmPC；Rugo 2022'),
+          li('恢復後監測回到「高風險密度」：alpelisib 每週至少 2 次直到穩定；inavolisib 比照重新起始之 Day 1–7 每 3 天一次。', 'FDA 仿單')
+        ], 'warn'));
+        render(out); return;
+      }
+      // held but not yet at target — fall through to grade logic with a note
+      var overWindow = isAlp ? (heldDays > 5) : (heldDays > 7);
+      out.push('<div class="banner ' + sev + '"><span class="grade-tag">恢復評估 · 尚未達標</span><h2>暫停第 ' + heldDays + ' 天，FPG ' + Math.round(fpg) + ' mg/dL — 尚未達 ≤160 門檻</h2><p>' +
+        (isAlp
+          ? (overWindow ? '<strong>已超過仿單的 3–5 天判定窗：應照會內分泌科。</strong>21 天內未降至 ≤160 → 永久停藥。目前為第 ' + heldDays + ' 天。' : '仿單判定窗為停藥後 3–5 天內達 ≤160 → 降一階恢復；請把握時間加強降糖治療。')
+          : (overWindow ? '已超過 7 天：達標後將以<strong>降一階</strong>恢復（而非原劑量）。持續加強降糖治療。' : '若能在 7 天內達 ≤160，可以<strong>原劑量</strong>恢復——前 7 天的積極降糖有直接保留劑量的價值。')) + '</p></div>');
+    } else if (ctx === 'recur') {
+      /* ---------- RECURRENCE ---------- */
+      if (isAlp) {
+        out.push('<div class="banner sev-crit"><span class="grade-tag">復發／超時事件</span><h2>Alpelisib：21 天內未達標 → 依仿單永久停藥</h2><p>任一級高血糖，若在適當降糖治療下 21 天內無法降至 ≤160 mg/dL，仿單規定永久停用 alpelisib（Grade 2 為先降一階，仍未達標則停藥）。請與主治醫師確認計時起點與停藥決定。</p></div>');
+      } else {
+        if (fpg > 500) {
+          out.push('<div class="banner sev-crit"><span class="grade-tag">復發事件</span><h2>Inavolisib：30 天內第二次 FPG >500 → 依仿單永久停藥</h2><p>請通報主治醫師確認並記錄。急症紅旗仍須同步排除（步驟 1）。</p></div>');
+        } else if (fpg > 250) {
+          out.push('<div class="banner sev-danger"><span class="grade-tag">復發事件</span><h2>Inavolisib：30 天內再次 250–500 → 暫停至 ≤160，以降一階恢復</h2><p>目前 ' + dose + ' mg' + (nextDown[dose] ? '，恢復劑量為 ' + nextDown[dose] + '。' : '，已是最低劑量 3 mg——無法耐受再減量時依仿單永久停藥。') + '</p></div>');
+        } else {
+          out.push('<div class="banner sev-warn"><span class="grade-tag">復發事件</span><h2>Inavolisib：30 天內復發但未達 >250 — 依當前分層處置</h2><p>仿單之復發加嚴條款適用於 >250 之事件；本次依下列分層處理，並提高監測密度。</p></div>');
+        }
+      }
+    } else {
+      /* ---------- ONGOING: banner by grade ---------- */
+      var bannerTitle, bannerBody;
+      if (grade === 0) {
+        bannerTitle = 'FPG ' + Math.round(fpg) + ' mg/dL — 正常範圍';
+        bannerBody = '維持例行監測即可；本頁下方仍列出監測時程供核對。';
+      } else if (grade === 1) {
+        bannerTitle = 'FPG ' + Math.round(fpg) + ' mg/dL — Grade 1';
+        bannerBody = isAlp ? 'Alpelisib 不需調整劑量；但應「起始或加強」降血糖治療（仿單為無條件要求）。' : 'Inavolisib 不需調整劑量；飲食調整＋確保水分，有高血糖風險因子者起始或加強口服降糖藥。';
+      } else if (grade === 2) {
+        bannerTitle = 'FPG ' + Math.round(fpg) + ' mg/dL — Grade 2';
+        bannerBody = isAlp ? 'Alpelisib 照常續用（不停藥、不減量），同時加強降糖治療並啟動 21 天倒數。' : '<strong>Inavolisib 必須暫停</strong>，直到 FPG ≤160 mg/dL，之後以原劑量恢復。這是兩藥差異最大、最常做錯的區間。';
+      } else if (grade === 3) {
+        bannerTitle = 'FPG ' + Math.round(fpg) + ' mg/dL — Grade 3';
+        bannerBody = (isAlp ? '<strong>中斷 alpelisib</strong>' : '<strong>暫停 inavolisib</strong>') + '，先驗酮體，加強降糖治療。今天通知醫師，不是等回診。';
+      } else {
+        bannerTitle = 'FPG ' + Math.round(fpg) + ' mg/dL — Grade 4';
+        bannerBody = '一律視為高血糖急症風險：立即通知醫師、驗酮體＋電解質＋滲透壓，' + (isAlp ? '中斷 alpelisib 並於 24 小時內複驗 FPG。' : '暫停 inavolisib 並評估脫水與酮症。');
+      }
+      out.push('<div class="banner ' + sev + '"><span class="grade-tag">' + gname + '</span><h2>' + bannerTitle + '</h2><p>' + bannerBody + '</p></div>');
+    }
+
+    /* ---------- PI3Ki ACTION CARD (ongoing / held-not-at-target / recur fall-through) ---------- */
+    if (ctx !== 'held' || fpg > 160) {
+      var act = [];
+      if (grade <= 1) {
+        act.push(li('<strong>' + drugName + ' 續用原劑量 ' + dose + (isAlp ? ' mg' : ' mg') + ' QD</strong>，不需調整。', 'FDA 仿單'));
+      } else if (grade === 2) {
+        if (isAlp) {
+          act.push(li('<strong>續用原劑量</strong>；不需停藥。', 'FDA 仿單 Table 3'));
+          act.push(li('啟動 <strong>21 天倒數</strong>：加強降糖治療後，若 21 天內 FPG 仍未 ≤160 → 減一階（' + (nextDown[dose] || '已最低，需討論停藥') + '）。', 'FDA 仿單 Table 3'));
+        } else {
+          act.push(li('<strong>暫停 inavolisib</strong>，直到 FPG ≤160 mg/dL → 以<strong>原劑量</strong>恢復。', 'FDA 仿單 Table 2'));
+          act.push(li('在適當降糖治療下 FPG 仍持續 200–250 mg/dL 達 <strong>7 天</strong> → 照會內分泌科。', 'FDA 仿單 Table 2'));
+        }
+      } else if (grade === 3) {
+        if (isAlp) {
+          act.push(li('<strong>中斷 alpelisib</strong>；給予靜脈輸液，處理電解質／酮症／高滲透壓異常。', 'FDA 仿單 Table 3'));
+          act.push(li('<strong>3–5 天內</strong>降至 ≤160 → 以<strong>降一階</strong>（' + (nextDown[dose] || '已最低——需與醫師討論停藥') + '）恢復；3–5 天未達標 → 照會內分泌科。', 'FDA 仿單 Table 3'));
+          act.push(li('<strong>21 天內未達 ≤160 → 永久停藥</strong>。', 'FDA 仿單 Table 3'));
+        } else {
+          act.push(li('<strong>暫停 inavolisib</strong>；必要時補水。', 'FDA 仿單 Table 2'));
+          act.push(li('<strong>≤7 天達 ≤160 → 原劑量恢復</strong>；≥8 天才達標 → 降一階（' + (nextDown[dose] || '已最低——無法再減量時永久停藥') + '）恢復。<strong>前 7 天的積極控糖直接決定能否保住劑量。</strong>', 'FDA 仿單 Table 2；Im 2026'),
+          li('30 天內再次 250–500 → 暫停至 ≤160，降一階恢復。', 'FDA 仿單 Table 2'));
+        }
+      } else if (grade === 4) {
+        if (isAlp) {
+          act.push(li('<strong>中斷 alpelisib</strong>；靜脈輸液＋處理電解質／酮症／高滲透壓。', 'FDA 仿單 Table 3'));
+          act.push(li('<strong>24 小時內複驗 FPG</strong>（務必確認為空腹值、排除檢體誤差）。降至 ≤500 → 改依 Grade 3 流程；<strong>確認仍 >500 → 永久停藥</strong>。', 'FDA 仿單 Table 3'));
+        } else {
+          act.push(li('<strong>暫停 inavolisib</strong>；評估脫水（volume depletion）與酮症，給予適當補水。', 'FDA 仿單 Table 2'));
+          act.push(li('降至 ≤160 → <strong>降一階</strong>（' + (nextDown[dose] || '已最低') + '）恢復；<strong>30 天內再次 >500 → 永久停藥</strong>。', 'FDA 仿單 Table 2'));
+        }
+      }
+      if (grade >= 2) out.push(card('抗癌藥（' + drugName + '）處置', act));
+      else out.push(card('抗癌藥（' + drugName + '）處置', act));
+    }
+
+    /* ---------- ANTI-HYPERGLYCEMIC ESCALATION ---------- */
+    if (grade >= 1) {
+      var ahg = [];
+      if (grade >= 3) {
+        ahg.push(li('<strong>先驗酮體（血酮優先）</strong>——陽性即改走急症流程（見步驟 1），停口服藥、insulin ＋ 輸液、住院。', 'Tankova 2022'));
+      }
+      if (meds.none || (!meds.met && !meds.sglt2 && !meds.tzd && !meds.dpp4 && !meds.insulin && !meds.su)) {
+        if (egfr === '0') {
+          ahg.push(li('<strong>eGFR <30：metformin 禁忌。</strong>改以其他藥物為起點（由醫師選擇，SGLT2i 於低 eGFR 之降糖效果亦有限），儘速照會內分泌科。', 'Rugo 2022'));
+        } else if (egfr === '30') {
+          ahg.push(li('eGFR 30–44：<strong>不建議新起始 metformin</strong>。第一線改由醫師評估（如 DPP-4i 劑量調整後使用），並照會內分泌科。', 'Rugo 2022'));
+        } else {
+          ahg.push(li('<strong>起始 metformin 500 mg QD（隨餐）</strong>，每週上調 500 mg，目標依耐受至 2000 mg/day；優先用 <strong>extended-release 劑型</strong>減少腸胃不適。', 'FDA alpelisib 仿單；Tankova 2022；Jhaveri 2026'));
+          if (grade >= 2) ahg.push(li('Grade ≥2 起點可直接 <strong>500 mg BID</strong> 或依醫囑 1000 mg/day 起，加速達標。', 'Jhaveri 2026'));
+        }
+      } else if (meds.met && metDose < 2000 && egfr !== '0') {
+        var ladder = { 500: '500 mg BID', 1000: '早 500／晚 1000 mg', 1500: '1000 mg BID（2000 mg/day）' };
+        ahg.push(li('Metformin 尚未達最大劑量：<strong>上調至 ' + ladder[metDose] + '</strong>（仿單階梯：500 QD → 500 BID → 早500/晚1000 → 1000 BID），注意腹瀉與食慾。', 'FDA alpelisib 仿單'));
+        if (grade >= 2) ahg.push(li('Grade ≥2 且血糖持續上升：不必等 metformin 爬滿階梯，<strong>可同時加上第二線</strong>（SGLT2i 或 pioglitazone）。', 'SOLAR-1 protocol；Delphi 2024'));
+      } else if (meds.met && (metDose >= 2000 || egfr === '0')) {
+        if (!meds.sglt2 && !meds.tzd) {
+          ahg.push(li('Metformin 已達最大耐受劑量：<strong>加上第二線 — SGLT2i（如 empagliflozin 10 mg QD）或 pioglitazone 15–45 mg QD</strong>。SGLT2i 不經 PI3K 路徑、另需衛教酮症警訊；pioglitazone 注意水腫與心衰。', 'Delphi 2024；Tankova 2022'));
+        } else if (!(meds.sglt2 && meds.tzd)) {
+          ahg.push(li('已用兩線口服藥：加上第三線 — ' + (meds.sglt2 ? 'pioglitazone 15–45 mg' : 'SGLT2i') + ' 或 DPP-4i；三藥仍未控 → 依醫囑短期 insulin。', 'Delphi 2024'));
+        } else {
+          ahg.push(li('口服三線已用滿仍未達標：<strong>依醫囑加入短期 insulin（rescue，1–2 天至數天）</strong>，並照會內分泌科。這不是治療失敗，SOLAR-1 中 284 人有 52 人曾用 insulin。', 'FDA 仿單註³；Rugo 2020'));
+        }
+      }
+      if (meds.su) ahg.push(li('<strong>Sulfonylurea 建議由醫師評估停用</strong>：SU 為 insulin 促泌劑，有反彈性低血糖風險，不建議用於 PI3Ki 高血糖之主要治療。', 'Tankova 2022；Jhaveri 2026'));
+      if (meds.sglt2) ahg.push(li('使用 SGLT2i 中：衛教<strong>酮症警訊</strong>（噁心、腹痛、倦怠），生病日（無法進食）暫停 SGLT2i；避免極低碳水飲食以免干擾酮體判讀。', 'Tankova 2022；Delphi 2024'));
+      if (grade >= 3 && !meds.insulin) ahg.push(li('若口服藥無法及時控制：<strong>短期 insulin 是仿單明文允許的 rescue</strong>（1–2 天），不可因顧慮 hyperinsulinemia 而延誤。', 'FDA 仿單；EMA SmPC'));
+      out.push(card('降血糖藥調整', ahg));
+    }
+
+    /* ---------- MONITORING ---------- */
+    var mon = [];
+    if (grade === 0) {
+      mon.push(isAlp
+        ? li('例行監測：治療前 2 週<strong>每週至少 1 次 FPG</strong>，之後每 4 週至少 1 次；HbA1c 每 3 個月。', 'FDA 仿單')
+        : li('例行監測：Day 1–7 <strong>每 3 天 1 次</strong> → Day 8–28 每週 → 之後 8 週每 2 週 → 其後每 4 週；HbA1c 每 3 個月。', 'FDA 仿單'));
+      mon.push(li('高風險者（糖尿病前期／BMI ≥30／高齡）：治療前 2 週<strong>每日自我監測</strong>。', 'EMA SmPC'));
+    } else if (grade === 1) {
+      mon.push(li('提高至<strong>每週複驗 FPG</strong> 直到回穩；並確認病人會做居家自我監測與記錄。', 'Tankova 2022'));
+    } else if (grade === 2) {
+      mon.push(li('<strong>每週至少 1–2 次 FPG</strong>（alpelisib 仿單：發生高血糖後每週 2 次直到正常）；教病人每日空腹自測並回報。', 'FDA 仿單'));
+      if (isAlp) mon.push(li('在行事曆標記 <strong>21 天判定日</strong>（今日起算），未達標即回報醫師減量。'));
+      else mon.push(li('在行事曆標記 <strong>第 7 天判定日</strong>：持續 200–250 → 照會內分泌科。'));
+    } else {
+      mon.push(li('<strong>每日（至每日多次）監測</strong>，直到 FPG ≤160；有條件者考慮 CGM。', 'Delphi 2024；Jhaveri 2026'));
+      if (isAlp && grade === 4) mon.push(li('<strong>24 小時內完成複驗</strong>並回報醫師——此複驗直接決定是否永久停藥。', 'FDA 仿單'));
+      if (isAlp && grade === 3) mon.push(li('在行事曆標記<strong>第 3–5 天</strong>（降階恢復判定）與<strong>第 21 天</strong>（永久停藥判定）。', 'FDA 仿單'));
+      if (!isAlp) mon.push(li('在行事曆標記<strong>第 7 天</strong>：7 天內達 ≤160 → 原劑量恢復；之後才達標 → 降一階。', 'FDA 仿單'));
+    }
+    mon.push(li('同步追蹤：腹瀉次數、進食量、體重、eGFR——腹瀉脫水會使腎功能惡化，連動 metformin ' + (isAlp ? '' : '與 inavolisib ') + '劑量。', 'label；Rugo 2022'));
+    out.push(card('監測與回驗', mon));
+
+    /* ---------- REFERRAL ---------- */
+    var refer = [];
+    if (grade >= 3) refer.push(li('<strong>內分泌／糖尿病專科照會</strong>（Grade ≥3 為仿單建議）。', 'FDA 仿單'));
+    if (grade === 2) refer.push(li('可考慮內分泌照會；已知糖尿病者應照會。', 'EMA 仿單'));
+    if (grade <= 1) refer.push(li('不需常規照會；已知糖尿病或多重風險因子者可先行安排。', 'EMA 仿單'));
+    refer.push(li('任何 Grade ≥2 事件、酮體陽性、或病人自述不適：<strong>當日回報主治醫師</strong>；試驗個案依 protocol 通報。'));
+    out.push(card('照會與通報', refer));
+
+    /* ---------- PITFALLS ---------- */
+    var tips = [];
+    tips.push(li('<strong>只用空腹血糖做劑量決策</strong>；隨機血糖異常 → 安排空腹複驗，勿直接調藥。', '兩藥仿單'));
+    if (!isAlp && grade === 2) tips.push(li('<strong>不要套用 alpelisib 的習慣</strong>：FPG 180 mg/dL 時 alpelisib 照吃，inavolisib 必須停——反向弄錯會「該停不停」。'));
+    if (isAlp && grade === 2) tips.push(li('<strong>不要因 FPG 180 就擅自停 alpelisib</strong>——仿單明文不需調整劑量；正確動作是加強降糖＋啟動 21 天倒數。'));
+    if (meds.insulin || meds.su) tips.push(li('<strong>抗癌藥暫停期間，insulin／SU 須同步下修</strong>，否則血糖回落時會低血糖。', 'EMA SmPC'));
+    tips.push(li('高血糖中位發生於' + (isAlp ? '第 15 天' : '第 7 天') + '（前 2 週' + (isAlp ? '' : '，尤其第一週') + '為決戰期），但最晚可在治療數百天後才出現——<strong>任何時候都不能停止監測</strong>。', 'label；Rugo 2020'));
+    tips.push(li('基線血糖正常不代表安全：正常 HbA1c 者仍可能在 72 小時內進展為 HHS。', 'Li 2026 個案'));
+    out.push(card('常見錯誤與提醒', tips, 'warn'));
+
+    render(out);
+  });
+
+  function render(out) {
+    var el = $('result');
+    el.innerHTML = out.join('');
+    el.scrollIntoView({ behavior: 'smooth', block: 'start' });
+  }
+})();
+</script>
