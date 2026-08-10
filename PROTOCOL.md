@@ -89,10 +89,15 @@
 ```
 起始 500 mg QD 隨餐（Grade ≥2 或明顯早發高血糖可自 500 mg BID 或 1000 mg/day 起）
   ↓ 依耐受每週上調（急症情境可 1 週內衝到 2000；保守 XR 方案每 3–4 週 +500 mg）
-500 mg BID → 早 500／晚 1000 → 1000 mg BID（上限 2000 mg/day）
+500 mg BID → 早 500／晚 1000 → 1000 mg BID（標準上限 2000 mg/day；IR 於選擇性病人可再上調，見下）
 ```
 
 - **優先 XR 劑型**（腸胃耐受較佳）；IR >500 mg/day 必須分次【L3：Jhaveri 2026】。
+- **2000 mg 之後還有空間嗎？（Glucophage 仿單 vs PI3Ki 文獻）**
+  - PI3Ki 相關文獻的上限一致為 **2000 mg/day**：alpelisib 仿單階梯至 1000 mg BID【L1】、Tankova 與 Jhaveri 皆 2000【L3】；Delphi 提及最高 2500 但專家自認增益存疑【L3】。
+  - 但**原廠 Glucophage（metformin IR）仿單允許更高**：美國 FDA 上限 **2550 mg/day**（分次給；「doses above 2000 mg may be better tolerated given 3 times a day with meals」）；歐盟 SmPC 上限 **3000 mg/day 分 3 次**（如 1000 mg TID）。台灣仿單請依原廠現行版本確認。**XR 劑型上限一律 2000 mg/day**，不適用此加碼【L1：Glucophage label】。
+  - **劑量反應證據**：Garber 1997 雙盲劑量反應試驗（n=451，500–2500 mg/day）顯示 FPG／HbA1c 改善於 **2000 mg 已近平頂**（HbA1c 差異 0.6–2.0% 對應 500–2000 mg），2500 mg 增益有限，腸胃副作用隨劑量上升【L2】。
+  - **本 protocol 的實務建議**：**2000 mg/day 仍為標準上限**。僅在①腸胃耐受良好（無明顯腹瀉）②eGFR ≥60 ③希望延後加第二線或 insulin 的個別病人，可依 Glucophage 仿單將 **IR 上調至 850–1000 mg TID（2550–3000 mg/day）**，並由內分泌科追蹤。多數情況下，**加 SGLT2i 比把 metformin 推超過 2000 mg 更有效率**——尤其 PI3Ki 本身腹瀉常見（alpelisib 58%、inavolisib 48%），高劑量 metformin 的腸胃負擔會直接疊加。
 - eGFR 規則【L3】：≥60 可用（每年追蹤）；45–59 可用（每 3–6 個月追蹤）；**30–44 不得新起始**（已用者減半）；**<30 禁忌**。顯影劑檢查（乳癌病人每 8–12 週一次 CT）：eGFR <30 或依院內規範於前後 48 小時停用。
 - 腹瀉時：**先動 metformin（減量→改 XR→暫停 4–5 天後以 850 mg 半錠晚餐後 re-challenge），不要先減抗癌藥**【L3】；但已有 grade 3/4 高血糖或脫水時，依仿單處置抗癌藥永遠優先。
 - 起效需 1–2 週【L3】——在 alpelisib「3–5 天達標」的時窗內，metformin 單獨往往來不及，Grade ≥3 需並用其他手段（§4）。

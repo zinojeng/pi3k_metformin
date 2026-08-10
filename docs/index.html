@@ -235,7 +235,8 @@
             <option value="500">500 mg QD</option>
             <option value="1000">500 mg BID</option>
             <option value="1500">早 500／晚 1000 mg</option>
-            <option value="2000">1000 mg BID（最大 2000 mg/day）</option>
+            <option value="2000">1000 mg BID（2000 mg/day，標準上限）</option>
+            <option value="3000">850–1000 mg TID（2550–3000 mg/day，IR 仿單上限）</option>
           </select>
         </div>
         <div class="opts" style="margin-top:8px">
@@ -531,7 +532,10 @@
         if (grade >= 2) ahg.push(li('Grade ≥2 且血糖持續上升：不必等 metformin 爬滿階梯，<strong>可同時加上第二線</strong>（SGLT2i 或 pioglitazone）。', 'SOLAR-1 protocol；Delphi 2024'));
       } else if (meds.met && (metDose >= 2000 || egfr === '0')) {
         if (!meds.sglt2 && !meds.tzd) {
-          ahg.push(li('Metformin 已達最大耐受劑量：<strong>加上第二線 — SGLT2i（如 empagliflozin 10 mg QD）或 pioglitazone 15–45 mg QD</strong>。SGLT2i 不經 PI3K 路徑、另需衛教酮症警訊；pioglitazone 注意水腫與心衰。', 'Delphi 2024；Tankova 2022'));
+          ahg.push(li('Metformin 已達標準上限：<strong>加上第二線 — SGLT2i（如 empagliflozin 10 mg QD）或 pioglitazone 15–45 mg QD</strong>。SGLT2i 不經 PI3K 路徑、另需衛教酮症警訊；pioglitazone 注意水腫與心衰。', 'Delphi 2024；Tankova 2022'));
+          if (metDose === 2000 && egfr !== '0' && egfr !== '30') {
+            ahg.push(li('替代選項（限腸胃耐受良好且 eGFR ≥60 者）：IR metformin 可依 Glucophage 仿單續調至 <strong>850–1000 mg TID</strong>（美國上限 2550、歐盟 3000 mg/day）；惟劑量反應在 2000 mg 已近平頂（Garber 1997），且腸胃負擔與 PI3Ki 腹瀉疊加——<strong>加第二線通常更有效率</strong>。XR 劑型上限維持 2000。', 'Glucophage 仿單；Garber 1997'));
+          }
         } else if (!(meds.sglt2 && meds.tzd)) {
           ahg.push(li('已用兩線口服藥：加上第三線 — ' + (meds.sglt2 ? 'pioglitazone 15–45 mg' : 'SGLT2i') + ' 或 DPP-4i；三藥仍未控 → 依醫囑短期 insulin。', 'Delphi 2024'));
         } else {
