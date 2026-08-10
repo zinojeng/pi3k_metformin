@@ -1846,6 +1846,20 @@ PI3Kα inhibitor 相關高血糖的主病生理是**嚴重藥物誘發的 insuli
 
 > **本回顧建議之實務上限【L3】：2000 mg/day**（IR 1000 mg BID 或 XR 2000 mg QD）。2500 mg/day 僅 Delphi 提及且專家自身質疑其增益。
 
+### G-2.4b Glucophage 原廠仿單之上限高於 PI3Ki 文獻（2026-08-11 外部查證新增）
+
+> ⚠ **來源聲明**：本小節之 Glucophage 仿單條文與劑量反應試驗**未落地為本地全文**，係 2026-08-11 經 DailyMed 與 PubMed 線上查證；標示為【L1-外部】【L2-外部】以與本地可 grep 之來源區隔，引用前請自行覆核。
+
+| 來源 | IR 上限 | 附註 |
+|---|---|---|
+| 美國 FDA Glucophage 仿單（DailyMed） | **2550 mg/day**，分次給 | 逐字 "Doses above 2000 mg may be better tolerated given 3 times a day with meals"；**Glucophage XR 上限 2000 mg QD**，不適用 TID 加碼 【L1-外部】 |
+| 歐盟 SmPC（Merck Glucophage） | **3000 mg/day 分 3 次**（如 1000 mg TID） | 成人標準條文 【L1-外部】 |
+| TFDA 台灣庫魯化仿單 | 逐字上限**本回顧未取得可驗證來源** | 僅確認 500／850／1000 mg 品項存在；請依原廠現行仿單確認 |
+
+- **劑量反應證據【L2-外部：Garber 1997，PMID 9428832】**：雙盲劑量反應試驗（n=451，500–2500 mg/day，11 週）：FPG 較 placebo 多降 19–84 mg/dL、HbA1c 多降 0.6–2.0%（對應 500–2000 mg/day），**療效於 2000 mg 已近平頂**；治療相關不良事件（以腸胃為主）metformin 28% vs placebo 15%（p=0.02）。
+- **與 PI3Ki 情境之調和**：PI3Ki 端所有本地來源之上限一致為 2000 mg/day（見 G-2.4），故**本回顧維持 2000 mg/day 為標準上限**。僅於①腸胃耐受良好（無明顯腹瀉）②eGFR ≥60 ③希望延後加第二線或 insulin 之個別病人，可依 Glucophage 仿單將 **IR 上調至 850–1000 mg TID（2550–3000 mg/day）**，並由內分泌科追蹤。
+- **實務排序**：考量 alpelisib 任一級腹瀉 57.7%［SOLAR1_AE_Rugo_2020.md］、inavolisib 48%［label_inavolisib.md］，與腹瀉→脫水→eGFR 下降→metformin 受限／inavolisib 減量之連鎖（見 G-3），**加 SGLT2i 通常優於將 metformin 推超過 2000 mg**；TID 加碼列為替代選項而非常規階梯。
+
 ### G-2.5 起效時間與療效期待（避免過早判定 metformin 失敗）
 
 - Metformin「onset of action: glucose control observed in **1-2 weeks**, maximal effect in **2-3 months**」。[Mgmt_Goncalves_2022.md]【L3】
@@ -2016,7 +2030,7 @@ PI3Kα inhibitor 相關高血糖的主病生理是**嚴重藥物誘發的 insuli
 9. **NCCN 對 metformin titration 之原文建議**——[guideline_ada_comparators.md] 明文警示：坊間流傳之「NCCN 建議 metformin 500 mg QD 起始……」係來自第三方期刊而非 NCCN 原文，**禁止以「NCCN 建議」形式引用**。
 10. **Metformin 於 inavolisib 之最佳 titration 排程**——FDA inavolisib 仿單全文未出現 "metformin"；EMA 僅稱其為 "preferred initial agent"，未給 titration 細節。
 11. **不同 metformin 劑型／劑量對 PI3Ki 療效（PFS／OS）之影響**——無任何本地來源。
-12. **2500 mg/day 之安全性資料**——Delphi 提及此上限但專家自身質疑其增益，無支持性數據。
+12. **2500 mg/day 之安全性資料**——Delphi 提及此上限但專家自身質疑其增益，本地無支持性數據（2026-08-11 補註：外部查證之 Garber 1997 劑量反應試驗含 2500 mg 組，見 G-2.4b，惟全文未落地本地）。
 13. **SOLAR-1 試驗本身之 metformin titration 排程（mg 與時程）**——AE 專文全文未載（僅 "consider/start or intensify metformin"、"beyond MTD of metformin"）；G-2.4 表中之 titration 出自 **FDA 仿單**而非 SOLAR-1 論文[SOLAR1_AE_Rugo_2020.md]／[label_alpelisib.md]。
 14. **SOLAR-1 中「單獨因高血糖」之 alpelisib 減量／中斷比率**——僅有整體 AE 之 dose reduction 59.2%（因 AE 57.7%）與 dose interruption 72.2%（因 AE 66.5%），未拆分[SOLAR1_AE_Rugo_2020.md]。
 15. **SOLAR-1 之 dose-intensity 分組比較之 HR／95% CI／p 值**——未報告；且該分組為事後分析[SOLAR1_AE_Rugo_2020.md]。
