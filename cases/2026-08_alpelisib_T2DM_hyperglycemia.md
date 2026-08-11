@@ -110,7 +110,31 @@ T2DM＋alpelisib＋住院中起始 SGLT2i，逐項確認：①目前進食量足
 
 ---
 
-## 4. SOAP（Progression Note 建議版，08/11 更新；全文不使用縮寫）
+## 4. SOAP 精簡版（08/11，無縮寫、可直接用）
+
+**Subjective:** Type 2 diabetes mellitus, on alpelisib 300 milligrams daily plus fulvestrant for stage IV breast cancer. Glucose rising despite metformin and dapagliflozin. Mild fatigue only; eating fair; no nausea, vomiting, or dyspnea.
+
+**Objective:** Heart rate 108, other vital signs stable, fully alert. Erythematous rash. **Morning fasting glucose 181 → 162 → 173 → 218 → 255 mg/dL (August 7–11)**; post-dinner peak 478 → insulin aspart rescue. Ketone, glycated hemoglobin, renal function pending.
+
+**Assessment:**
+1. **Alpelisib-induced hyperglycemia, Grade 3 (fasting 255 on August 11)**, rising four days despite two oral agents, on background type 2 diabetes; ketoacidosis not yet excluded; tachycardia likely volume depletion.
+2. Stage IV breast cancer — **alpelisib held today**; fulvestrant continues.
+3. Suspected alpelisib rash.
+4. Hypertension, stable.
+
+**Plan:**
+- Hold alpelisib; confirm 255 with venous glucose; continue fulvestrant.
+- Immediate blood ketone, electrolytes, renal function, glycated hemoglobin; ketone positive → ketoacidosis pathway.
+- Continue intravenous saline.
+- Start glargine 0.1–0.2 units per kilogram at bedtime; insulin aspart correction for pre-meal >250; no sulfonylurea.
+- Glucose will fall within 24–72 hours off alpelisib — **down-titrate insulin daily**.
+- Continue metformin and dapagliflozin if eating well (hold dapagliflozin and check ketone if intake poor); **choose one regimen — Glucophage plus Forxiga, or Xigduo — never both**.
+- Glucose four times daily; **morning fasting value decides resumption: ≤160 by August 14–16 → resume at 250 milligrams; still >160 by about August 30 → discuss permanent discontinuation.**
+- Endocrinology co-management; rash: grade and treat; teach patient to report fasting ≥160 and ketone warning signs.
+
+---
+
+### 4b. 完整版（同日，含細節）
 
 **Subjective:**
 The patient has known type 2 diabetes mellitus and is receiving alpelisib 300 milligrams once daily together with fulvestrant for stage IV luminal A breast cancer. Progressive hyperglycemia has developed despite up-titration of metformin and initiation of dapagliflozin. She reports grade 1 fatigue. Oral intake is fair. She denies nausea, vomiting, abdominal pain, and shortness of breath.
