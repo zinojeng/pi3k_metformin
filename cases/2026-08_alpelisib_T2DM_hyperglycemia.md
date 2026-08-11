@@ -110,30 +110,32 @@ T2DM＋alpelisib＋住院中起始 SGLT2i，逐項確認：①目前進食量足
 
 ---
 
-## 4. SOAP（Progression Note 建議版，08/11 更新）
+## 4. SOAP（Progression Note 建議版，08/11 更新；全文不使用縮寫）
 
-**S:** Known T2DM on alpelisib 300 mg QD + fulvestrant for stage IV luminal A breast cancer. Progressive hyperglycemia despite metformin up-titration and dapagliflozin initiation. Fatigue G1; oral intake fair; no nausea/vomiting, abdominal pain, or dyspnea.
+**Subjective:**
+The patient has known type 2 diabetes mellitus and is receiving alpelisib 300 milligrams once daily together with fulvestrant for stage IV luminal A breast cancer. Progressive hyperglycemia has developed despite up-titration of metformin and initiation of dapagliflozin. She reports grade 1 fatigue. Oral intake is fair. She denies nausea, vomiting, abdominal pain, and shortness of breath.
 
-**O:** BT 36.3, **HR 108**, RR 18, BP 120/66, GCS 15. Skin: erythematous rash (alpelisib-related, grade to be documented). No Kussmaul breathing; abdomen soft.
-**Morning fasting glucose trend (mg/dL): 181 (08/07) → 162 (08/08) → 173 (08/09) → 218 (08/10) → 255 (08/11)** — rising ×4 days despite oral escalation. Daytime excursions: pre-dinner 373, PC 478 → Novorapid rescue, pre-lunch 339. Ketones/HbA1c/eGFR: pending.
+**Objective:**
+Body temperature 36.3 degrees Celsius, **heart rate 108 beats per minute**, respiratory rate 18 breaths per minute, blood pressure 120/66 millimeters of mercury, Glasgow Coma Scale 15 (fully alert). Skin: erythematous rash, suspected to be related to alpelisib; grade to be documented. No deep or labored (Kussmaul) breathing; abdomen soft.
+**Morning fasting blood glucose trend (milligrams per deciliter): 181 (August 7) → 162 (August 8) → 173 (August 9) → 218 (August 10) → 255 (August 11)** — rising for four consecutive days despite escalation of oral anti-hyperglycemic agents. Daytime values: 373 before dinner and 478 after dinner (insulin aspart given as rescue) on August 9; 339 before lunch on August 10. Blood ketone, glycated hemoglobin, and estimated glomerular filtration rate: pending.
 
-**A:**
-1. **Alpelisib-associated hyperglycemia, now CTCAE Grade 3 by fasting glucose (FPG 255, >250) as of 08/11**, rising ×4 days on background T2DM despite metformin + SGLT2i — per PIQRAY label Table 3: **interrupt alpelisib**, IV hydration, assess ketosis/electrolytes; oral agents insufficient → basal insulin indicated. DKA/HHS not yet excluded (ketones pending; on SGLT2i — euglycemic DKA also possible). Sinus tachycardia — likely osmotic-diuresis volume depletion.
-2. Stage IV breast cancer — alpelisib **held** as of 08/11; fulvestrant continues. Resumption plan per label: FPG ≤160 within 3–5 days (08/14–16) → resume at **250 mg QD** (one dose level down); not at target by 21 days (~08/30–09/01) → discuss permanent discontinuation.
-3. Rash, suspect alpelisib dermatologic AE — grade and treat.
-4. HTN — stable on Exforge.
+**Assessment:**
+1. **Alpelisib-associated hyperglycemia, now Grade 3 by the Common Terminology Criteria for Adverse Events, based on a morning fasting blood glucose of 255 milligrams per deciliter (above 250) on August 11**, rising for four consecutive days in a patient with pre-existing type 2 diabetes mellitus despite metformin plus a sodium-glucose cotransporter 2 inhibitor. According to the PIQRAY prescribing information (Table 3), this requires **interruption of alpelisib**, intravenous hydration, and assessment for ketosis and electrolyte disturbances. Oral agents are insufficient; basal insulin is indicated. Diabetic ketoacidosis and hyperosmolar hyperglycemic state have not yet been excluded (ketone result pending; note that the patient is taking a sodium-glucose cotransporter 2 inhibitor, so ketoacidosis with near-normal glucose is also possible). Sinus tachycardia is most likely due to volume depletion from osmotic diuresis.
+2. Stage IV breast cancer — alpelisib **held** as of August 11; fulvestrant continues. Resumption plan per the prescribing information: if fasting blood glucose falls to 160 milligrams per deciliter or below within 3 to 5 days (August 14 to 16), resume alpelisib at **250 milligrams once daily** (one dose level lower); if not at target by 21 days (approximately August 30 to September 1), discuss permanent discontinuation.
+3. Rash, suspected alpelisib-related dermatologic adverse event — to be graded and treated.
+4. Hypertension — stable on amlodipine/valsartan (Exforge).
 
-**P:**
-- **Hold alpelisib from 08/11**; confirm 255 with STAT venous glucose (confirmation, not a reason to delay management); fulvestrant continues
-- **Blood ketone (β-OHB) + electrolytes + renal function/eGFR + HbA1c STAT**; if ketone positive → DKA/HHS pathway (hold oral agents incl. SGLT2i, IV insulin + fluids)
-- IV normal saline (ongoing); reassess volume status and HR
-- **Start basal insulin glargine 0.1–0.2 U/kg qhs today**; keep Novorapid correction for pre-meal >250; avoid sulfonylurea
-- **⚠ Anticipate rapid glucose fall 24–72 h after alpelisib interruption — down-titrate basal/bolus insulin daily**; metformin is the last agent to reduce
-- Continue metformin (confirm tablet strength; ≤2000–3000 mg/day only if eGFR ≥60, no significant diarrhea; hold 48 h peri-contrast) and dapagliflozin 10 mg QD if oral intake adequate — suspend SGLT2i and check ketones if intake poor/vomiting
-- **Resolve duplication**: Glucophage + Forxiga (inpatient) OR Xigduo XR (discharge) — not both
-- Glucose QID (AC tid + HS); **morning fasting value drives resumption decision**; mark calendar: **08/14–16 (resume-at-250 mg window)**, **08/30–09/01 (21-day limit)**; endocrine co-management (arranged)
-- Rash: grade, antihistamine ± topical steroid; dermatology if grade ≥2 progressing
-- Education: after resumption, daily home fasting SMBG ×2 weeks, report ≥160; ketone warning signs; diarrhea ≥4/day report
+**Plan:**
+- **Hold alpelisib from August 11**; confirm the value of 255 with an immediate venous plasma glucose (for confirmation only — management should not be delayed while waiting); continue fulvestrant.
+- **Check blood beta-hydroxybutyrate (ketone), electrolytes, renal function with estimated glomerular filtration rate, and glycated hemoglobin immediately**; if ketone is positive, proceed to the diabetic ketoacidosis / hyperosmolar hyperglycemic state pathway (stop oral anti-hyperglycemic agents including the sodium-glucose cotransporter 2 inhibitor; give intravenous insulin and fluids).
+- Continue intravenous normal saline; reassess volume status and heart rate.
+- **Start basal insulin glargine 0.1 to 0.2 units per kilogram at bedtime today**; continue insulin aspart (Novorapid) correction doses for pre-meal glucose above 250 milligrams per deciliter; avoid sulfonylurea drugs.
+- **Anticipate a rapid fall in blood glucose within 24 to 72 hours after alpelisib interruption — reduce the basal and correction insulin doses every day accordingly to prevent hypoglycemia**; metformin should be the last agent to be reduced.
+- Continue metformin (confirm tablet strength; total daily dose 2000 to 3000 milligrams only if estimated glomerular filtration rate is 60 or above and there is no significant diarrhea; withhold for 48 hours around iodinated-contrast imaging) and dapagliflozin 10 milligrams once daily provided oral intake remains adequate — suspend dapagliflozin and check ketones if intake becomes poor or vomiting develops.
+- **Resolve the medication duplication**: use either Glucophage plus Forxiga (during admission) or the combination tablet Xigduo XR (at discharge) — not both together, because Xigduo XR already contains both dapagliflozin and metformin.
+- Blood glucose monitoring four times daily (before each meal and at bedtime); **the morning fasting value is the metric that drives the resumption decision**; mark the calendar: **August 14 to 16 (window to resume at 250 milligrams)** and **August 30 to September 1 (21-day limit)**; continue co-management with the endocrinology team.
+- Rash: document the grade; give an oral antihistamine with or without a topical corticosteroid; consult dermatology if grade 2 or higher and progressing.
+- Education: after resumption, the patient should check a fasting fingerstick glucose at home every morning for two weeks and report any value of 160 milligrams per deciliter or above; teach the warning signs of ketoacidosis (fatigue, nausea, abdominal pain); report diarrhea of four or more episodes per day.
 
 ---
 
