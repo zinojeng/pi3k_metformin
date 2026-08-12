@@ -60,6 +60,29 @@
 
 ---
 
+## 2c. 【08/12 更新】血酮 0.9＋代謝性酸中毒＋eGFR 48–51 → 停口服藥、insulin 全面接手
+
+**新數據**：
+- 血糖：08/11 05:00 255 → 11:00 346 → 20:58 **505** → 22:45 498；08/12 晨 **310／369**（停 alpelisib 第 2 天，晨間空腹仍 Grade 3）
+- Insulin 實際給量：Toujeo 8 單位（08/11、08/12）＋ Novorapid 4＋8＋6 單位——**一日總量約 26 單位，對這個血糖量級明顯不足**
+- 血液氣體（08/12 05:53）：pH 7.397、PCO2 28.4、**HCO3 17.6、BE −7.5** → **代償性代謝性酸中毒**；anion gap ≈ 131−(102+17.6) ≈ **11（正常）**
+- **血酮 0.9 mmol/L（參考 <0.6）**——輕度酮症，未達 DKA（pH 正常、AG 正常、酮 <3.0），但病人正在用 dapagliflozin，這是必須立刻反應的警訊
+- 腎功能：Crea 1.17、**eGFR 48.8（MDRD）／50.6（CKD-EPI）／C-G 41**；BUN/Cr ≈ 23 → 有 prerenal（脫水）成分
+- Na 131（血糖校正後 ≈135，translocational）；K 4.5–4.8 正常；CBC 無感染像；HR 已由 108 → 80–85、體溫正常、BP 102–136/57–75
+
+**判讀與動作**：
+
+1. **Dapagliflozin（Forxiga）今日暫停**——酮體升高＋代謝性酸中毒是 SGLT2i 的 sick-day 停藥指徵；繼續用下去是往 ketoacidosis 推。酮體 <0.6、酸中毒矯正、進食正常後再評估恢復
+2. **Metformin 今日暫停**——三重理由：eGFR <60（且 C-G 41）、代謝性酸中毒進行中、volume depletion。**原「2# TID＝3000 mg」計畫正式作廢**：eGFR 45–59 依 protocol 上限應回到 ≤2000 mg/day 且加密腎功能監測；eGFR 若進一步 <45 → 減半或不用
+3. **Insulin 升級為主力（本事件現在是 insulin-requiring）**：Toujeo 8 單位顯著不足——建議今晚上調至 **12 單位**（之後每日依晨值 +2–4 單位滴定），並改為**三餐固定劑量 Novorapid（4–6 單位）＋校正量表**，不要只靠事後校正追。口服藥停用後 insulin 需求會再上升，滴定要積極
+4. **輸液持續**（isotonic saline）——同時處理 prerenal 與酮症；今晚複驗：血酮、靜脈血氣、電解質（含 K）、血糖 q4–6h
+5. **惡化界線（任一達標 → DKA 流程、IV insulin infusion）**：血酮 ≥3.0、pH <7.30、HCO3 <15、意識改變或嘔吐無法進食
+6. **Alpelisib 計時器不變**：晨間空腹 310–369 → 續停；**任一天晨值 ≤160（於 ~08/30 前）→ 以 250 mg 恢復**；08/30–09/01 仍未達標 → 永久停藥討論。注意：現在停了口服藥、insulin 未到位前，達標日會往後移——**這正是「3–5 天窗內積極治療」的代價教訓**
+7. 次要：Na 131 為高血糖之 translocational（校正 ≈135），血糖改善後複驗即可；確認 HbA1c 是否已採
+8. **恢復 alpelisib（250 mg）當天的預案**：屆時病人將在較高劑量 insulin 上——恢復後血糖會再升，但**若再次中斷則需立即下修 insulin**；出院前把「alpelisib 開/停 ↔ insulin 加/減」的聯動教給病人與家屬
+
+---
+
 ## 3. 建議（依優先序）
 
 ### 3-1. 🔴 用藥安全——先解決處方重複
@@ -110,7 +133,31 @@ T2DM＋alpelisib＋住院中起始 SGLT2i，逐項確認：①目前進食量足
 
 ---
 
-## 4. SOAP 精簡版（08/11，無縮寫、可直接用）
+## 4. SOAP 精簡版（08/12 最新，無縮寫、可直接用）
+
+**Subjective:** Type 2 diabetes mellitus; alpelisib held since August 11 (day 2) for Grade 3 hyperglycemia; fulvestrant continues. Glucose remains high despite basal and rescue insulin. Eating fair; no vomiting, abdominal pain, or dyspnea; feels less fatigued.
+
+**Objective:** Heart rate improved to 80–85, afebrile, blood pressure 102–136/57–75, fully alert. Glucose: 255 → 346 → **505** → 498 (August 11), morning fasting **310／369** (August 12). Insulin received: Toujeo (glargine 300 units per milliliter) 8 units nightly; insulin aspart 4＋8＋6 units. Venous blood gas: pH 7.397, bicarbonate **17.6**, base excess −7.5 — **compensated metabolic acidosis**, anion gap about 11 (normal). **Blood ketone 0.9 millimoles per liter (elevated; reference below 0.6).** Creatinine 1.17, **estimated glomerular filtration rate 48–51**; blood urea nitrogen 27 (ratio suggests volume depletion). Sodium 131 (about 135 after glucose correction), potassium 4.5–4.8. Complete blood count unremarkable.
+
+**Assessment:**
+1. **Alpelisib-associated Grade 3 hyperglycemia, day 2 of drug interruption — still above target**, now with **early ketosis (0.9) and compensated metabolic acidosis while on dapagliflozin**, plus reduced kidney function (estimated glomerular filtration rate 48–51) with a prerenal component. Not diabetic ketoacidosis at this point (normal pH and anion gap), but oral agents are no longer safe and current insulin dosing is insufficient.
+2. Stage IV breast cancer — alpelisib on hold; fulvestrant continues.
+3. Hyponatremia 131 — translocational from hyperglycemia.
+4. Suspected alpelisib rash; hypertension stable.
+
+**Plan:**
+- **Stop dapagliflozin today** (ketosis plus metabolic acidosis = sick-day rule); reassess only when ketone below 0.6, acidosis resolved, and eating well.
+- **Stop metformin today** (estimated glomerular filtration rate below 60 with acidosis and volume depletion); when restarted later, maximum 2000 milligrams per day — **the previous 3000-milligram plan is cancelled**.
+- **Escalate insulin — now the main therapy**: increase Toujeo from 8 to **12 units tonight**, then adjust by 2–4 units daily by the morning value; add **scheduled insulin aspart 4–6 units before each meal** plus a correction scale.
+- Continue intravenous normal saline; recheck blood ketone, venous blood gas, electrolytes tonight; glucose every 4 to 6 hours.
+- **Escalation criteria to the diabetic ketoacidosis pathway (intravenous insulin infusion)**: ketone 3.0 or above, pH below 7.30, bicarbonate below 15, vomiting, or altered consciousness.
+- Alpelisib: keep holding; **resume at 250 milligrams once the morning fasting glucose reaches 160 or below (any day before about August 30)**; if still above 160 by August 30 to September 1, discuss permanent discontinuation.
+- Recheck sodium after glucose improves; confirm glycated hemoglobin has been sent; monitor kidney function during rehydration.
+- Before discharge, teach the link between alpelisib on/off and insulin dose up/down to prevent hypoglycemia.
+
+---
+
+### 前一日版本（08/11）
 
 **Subjective:** Type 2 diabetes mellitus, on alpelisib 300 milligrams daily plus fulvestrant for stage IV breast cancer. Glucose rising despite metformin and dapagliflozin. Mild fatigue only; eating fair; no nausea, vomiting, or dyspnea.
 
