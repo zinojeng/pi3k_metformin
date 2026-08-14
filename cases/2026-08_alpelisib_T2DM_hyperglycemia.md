@@ -83,6 +83,31 @@
 
 ---
 
+## 2d. 【08/14 更新】達標了——啟動 250 mg 恢復；風險反轉為低血糖
+
+**血糖走勢（晨間 05–06:00 為空腹，其餘為餐前/餐後）**：
+
+| 日期 | 空腹 | 日間值 | 事件 |
+|---|---|---|---|
+| 08/11 | 255 | 325／346／505／498 | 停 alpelisib（第 0 天） |
+| 08/12 | 310（lab 369） | 338／285／324 | 停口服藥；Toujeo 12 單位＋Novorapid 6 單位 tid |
+| 08/13 | **125** ✅ | 208／290／318 | **空腹達標（停藥第 2 天，3–5 天窗內）**；停餐前 Novorapid，改 Glucophage 1# tid pc（1500 mg/day）；21:00 校正 4 單位 |
+| 08/14 | **107** ✅ | 206 | 連續第 2 天達標；**趨勢仍在下降** |
+
+同日新資訊：**HbA1c 7.8%**——basal 的糖尿病控制原本就未達標（非單純 alpelisib 造成）。
+
+**判讀**：
+
+1. **恢復條件已成立**：晨間空腹 125（08/13）→ 107（08/14），於停藥後 3–5 天窗內達 ≤160 → 依仿單**以 250 mg QD 恢復 alpelisib**。回穩速度完全符合預測（第 2–3 天回落、第 3–5 天趨穩），也再次印證 08/12 的判讀——當時壓不下來是 insulin 不足，不是藥沒退。
+2. **現在的風險是低血糖，不是高血糖**：空腹 107 且仍在降、Toujeo 12 單位未動、alpelisib 尚未恢復。**兩條路二選一，今天就要決定**：
+   - **恢復 alpelisib 250 mg（建議，儘速）**：血糖將於 24–48 小時內回升 → Toujeo 12 單位**先維持**，恢復後首 3 天血糖 QID 監測，之後依晨值調整
+   - **暫不恢復**：今晚 Toujeo **12 → 8–10 單位**，否則明晨可能 <70
+3. **Metformin 1500 mg/day（1# tid）的兩個前提要補**：①複驗 creatinine/eGFR（08/12 的 48–51 含 prerenal 成分，補水後應改善；eGFR 45–59 上限 2000，1500 合規）②確認血酮已 <0.6、HCO3 回升（08/12 為 0.9／17.6，複驗結果未見報告）。
+4. **日間餐後 200–320 未解**：餐前 Novorapid 已停，恢復 alpelisib 後這塊會再惡化。預案：恢復後若餐前值持續 >250 → 重新加餐前 insulin（或上調 Toujeo）；酮體正常＋進食穩定後可重新評估 dapagliflozin（alpelisib 恢復後其「不經 PI3K 路徑」的優勢更重要）。
+5. **HbA1c 7.8% 的長期課題**：目標 <7.5%（預後良好層）；出院方案朝 metformin（≤2000）±SGLT2i±basal 規劃，內分泌門診接手。
+
+---
+
 ## 3. 建議（依優先序）
 
 ### 3-1. 🔴 用藥安全——先解決處方重複
@@ -133,7 +158,29 @@ T2DM＋alpelisib＋住院中起始 SGLT2i，逐項確認：①目前進食量足
 
 ---
 
-## 4. SOAP 精簡版（08/12 最新，無縮寫、可直接用）
+## 4. SOAP 精簡版（08/14 最新，無縮寫、可直接用）
+
+**Subjective:** Alpelisib held since August 11 for Grade 3 hyperglycemia. Feeling well, eating normally; no hypoglycemia symptoms, nausea, or vomiting.
+
+**Objective:** Morning fasting glucose 255 (August 11) → 310 (August 12) → **125 (August 13) → 107 (August 14, still trending down)**; post-meal values 206–338, improving. **Glycated hemoglobin 7.8%.** Current regimen: Toujeo 12 units nightly since August 12; prandial insulin aspart stopped August 13; metformin 500 milligrams three times daily after meals restarted August 13; single 4-unit correction August 13, 21:00. Repeat kidney function and ketone after rehydration: to be confirmed.
+
+**Assessment:**
+1. Alpelisib-associated Grade 3 hyperglycemia — **fasting glucose reached target (160 or below) on day 2 to 3 of interruption, within the 3-to-5-day window; criteria met to resume alpelisib at 250 milligrams once daily.** With alpelisib still off and basal insulin unchanged, the immediate risk has shifted to **hypoglycemia** (fasting 107 and falling).
+2. Glycated hemoglobin 7.8% — pre-existing suboptimal diabetes control, needs a long-term outpatient plan.
+3. Residual postprandial hyperglycemia (206–318) after prandial insulin was stopped.
+4. Kidney function and ketosis — reverify after volume repletion (metformin restarted at 1500 milligrams per day).
+
+**Plan:**
+- **Resume alpelisib at 250 milligrams once daily today** (coordinate with oncology); expect glucose to rise within 24 to 48 hours — keep Toujeo at 12 units through resumption; glucose four times daily for the first 3 days, then adjust by the morning fasting value.
+- **If resumption is delayed for any reason: reduce Toujeo to 8–10 units tonight** to prevent overnight hypoglycemia.
+- Confirm repeat creatinine (estimated glomerular filtration rate) and blood ketone before fixing metformin at 1500 milligrams per day; ceiling 2000 milligrams per day while estimated glomerular filtration rate is 45–59.
+- After resumption, if pre-meal glucose stays above 250: re-add prandial insulin aspart or increase Toujeo; reassess dapagliflozin once ketone is below 0.6 and intake is stable.
+- Daily morning fasting glucose for 2 weeks after resumption (this value drives all dose decisions); patient to report any fasting value 160 or above; if alpelisib is ever interrupted again, reduce insulin the same day.
+- Long-term: target glycated hemoglobin below 7.5%; outpatient regimen metformin (2000 milligrams per day or less) with or without a sodium-glucose cotransporter 2 inhibitor and basal insulin; endocrinology follow-up.
+
+---
+
+### 前一版本（08/12）
 
 **Subjective:** Type 2 diabetes mellitus; alpelisib held since August 11 (day 2) for Grade 3 hyperglycemia; fulvestrant continues. Glucose remains high despite basal and rescue insulin. Eating fair; no vomiting, abdominal pain, or dyspnea; feels less fatigued.
 
