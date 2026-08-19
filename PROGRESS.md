@@ -1,7 +1,7 @@
 # 專案進度紀錄（PROGRESS）
 
 > 目的：記錄本專案各階段的產出與待辦，供任何後續 session（人或 AI）快速接手。
-> 最後更新：2026-08-11
+> 最後更新：2026-08-19
 
 ---
 
@@ -43,6 +43,14 @@
 - 查證 Glucophage 仿單：美國 FDA IR 上限 2550 mg/day（>2000 建議 TID）、歐盟 SmPC 3000 mg/day 分 3 次、XR 一律 2000
 - PROTOCOL.md §3.2 與網頁工具新增「2000 mg 之後的空間」條款：標準上限維持 2000，選擇性病人（腸胃耐受、eGFR ≥60）可依仿單 IR 上調至 850–1000 mg TID；引 Garber 1997 劑量反應平頂為據，明示加 SGLT2i 通常更有效率
 
+### 2026-08-19 — Research gaps 系統性盤點（本輪）
+
+**`RESEARCH_GAPS.md` — 24 條 research gaps 全景**
+- Workflow 多 agent 盤點（27 agents、約 183 萬 tokens）：7 個並行抽取員（章節稿／PROTOCOL＋PROGRESS／試驗登錄與仿單／75 篇全文 limitations 分三組／稽核與個案）抽出 123 條線索 → 合併去重 18 條 → 每條由獨立敵對驗證員回 grep 本地全文庫嘗試反駁 → 18 條全數成立（數條收窄措辭）→ 完整性批判補 6 個角度（5 條本地有線索＋1 條延伸建議）
+- 六大類：預防與飲食（無 RCT、共識矛盾）、藥物比較（SGLT2i 無 RCT 且仿單「推薦卻不警示」、三藥無頭對頭）、特殊族群（既有 T2DM、CKD、亞洲/台灣、老年）、監測與急症（CGM vs SMBG 空白、HHS 無分母、rechallenge 僅個案）、機轉與長期結局（insulin feedback 人體證據方向不一致、停藥後完全回復時程未報告）、批判補充（PK DDI、顯影劑週期性停 metformin、類固醇併用、實施科學、衛教成效、健康經濟）
+- 附錄收錄驗證過程抓到的 6 處現有文件措辭失準（如 MSKCC「逾半數」應為 31.7%、中斷率 28% 應為 27.2%、「INAVO120 無時序資料」已被 Im 2026 反駁）——**待回修主文與章節稿**
+- Workflow journal：`.../subagents/workflows/wf_c009b4f7-f29/journal.jsonl`
+
 ---
 
 ## ⚠️ 2026-08-11 本機權限事件（已解決）
@@ -59,7 +67,7 @@ cd ~/Documents/medical/diabetes/pi3k && git pull
 
 ## 待辦 / 可能的下一步
 
-- [ ] 權限恢復後 `git pull` 同步本機
+- [ ] 依 `RESEARCH_GAPS.md` 附錄修正主文/章節稿的 6 處措辭失準（MSKCC 31.7%、中斷率 27.2% 附分母、INAVO120 時序已有 Im 2026 來源、血糖機 ±15% 無來源、copanlisib+keto n=2、Goncalves 門檻待驗）
 - [ ] 網頁工具可選強化：capivasertib 模式（4-on/3-off 監測邏輯不同）、中英切換、列印版病人衛教單
 - [ ] 追蹤中的試驗：NCT07748208（inavolisib 於 T2DM 病人，2026-09 起）、NCT05090358 TIFA、NCT06083038（CGM，已完成未發表）
 - [ ] TFDA inavolisib 中文仿單：尚未取得，取得後補入 PROTOCOL.md
