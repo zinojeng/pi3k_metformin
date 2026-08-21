@@ -108,6 +108,61 @@
 
 ---
 
+## 2e. 【08/21 更新】150 mg 再挑戰失敗 → 現以 37.5 mg（1/4 錠）續用中：血糖端已穩，未解的是腫瘤端
+
+### 實際發生的事（08/14–08/21）
+
+團隊於 08/14 恢復 Piqray，但劑量是 **150 mg（1# QD）**，而非仿單減一階的 250 mg；當晚血糖即衝 377，08/15 晨間空腹 **305 → 二度 Grade 3 → 再停藥**。08/15 起降糖方案定為 **Toujeo 14 單位 QD＋NovoRapid 8 單位 TID AC＋Glucophage 1# TID PC（1500 mg/day）**。停藥後空腹再次於第 2 天回落達標（160，08/17）——與第一次中斷完全相同的 24–72 小時規律。08/18 起改以 **150 mg 之 1/4 錠（約 37.5 mg）QD** 續用至今。
+
+| 日期 | 晨間空腹 | 日間值（AC/PC） | Piqray | 事件 |
+|---|---|---|---|---|
+| 08/14 | 107 ✅ | 206／179／**377**(21:03) | **150 mg 1#（恢復日）** | 以 150 mg 恢復（非仿單之 250）；當晚即 377 |
+| 08/15 | **305** ❌ | 290(PC)／349／451 | 停 | **二度 Grade 3 → 再停藥**；Toujeo 上調 14 單位、重啟 NovoRapid 8 單位 tid ac |
+| 08/16 | 276 | 287／303／213(PC) | 停 | |
+| 08/17 | **160** ✅ | 229／219／327 | 停 | 停藥第 2 天空腹達標（3–5 天窗內，第二次驗證回落規律） |
+| 08/18 | 164 | 146／184／178 | **37.5 mg（1/4#）起** | 164 為 Grade 2 下緣（血糖機 ±15% 邊際值） |
+| 08/19 | **134** ✅ | 247／229／354／287 | 37.5 mg | 晚間峰 354 |
+| 08/20 | **133** ✅ | 233／304／322／187 | 37.5 mg | HR 105 |
+| 08/21 | **158** ✅ | 266（午前） | 37.5 mg | 本日；nausea G1、fatigue G1 |
+
+### 判讀一：血糖端——分級決策值已連續達標
+
+晨間空腹 134 → 133 → 158，**連續 3 天 ≤160（Grade 1）**；日間餐前/餐後 200–354 不進入分級（劑量決策只用 FPG）。在「37.5 mg＋basal-bolus＋metformin 1500」的組合下，空腹血糖是壓得住的。殘餘問題是**晚餐段峰值（304–354）**，屬降糖藥調整範疇，不觸發抗癌藥動作。
+
+### 判讀二：腫瘤端——37.5 mg 是仿單外劑量，這是現在真正要決策的事
+
+依 PIQRAY 仿單【L1，`來源/label_alpelisib.md`】：
+
+- 減量階梯只有 **300 → 250 → 200 mg**，最多減兩階；「若需減至 200 mg 以下，**永久停用 PIQRAY**」（Table 1 註 2）。
+- 錠劑須整顆吞服，「**不可咀嚼、壓碎或剝半**」；破損不完整之錠劑不可服用——1/4 錠除了劑量本身仿單外，膜衣錠剝切後實際暴露量也無法保證。
+- 依仿單邏輯走：08/11 第一次 Grade 3 → 應以 250 恢復；08/15 第二次 Grade 3 → 應以 **200 mg**（第二階）恢復。團隊實際走了 150 → 37.5，等於已離開仿單路徑兩步。
+- **150 mg 與 37.5 mg 的抗癌療效，本回顧未取得可驗證來源**（SOLAR-1 減量階梯同樣止於 200 mg/day【L2，`來源/fulltext_facts_SOLAR1.md`】）。37.5 mg 目前「血糖可控」的代價可能是「療效未知」。
+
+**給腫瘤科的三個選項（需明確擇一並記錄於病歷）：**
+
+| 選項 | 內容 | 依據與代價 |
+|---|---|---|
+| A. 依仿單停藥 | 永久停用 alpelisib，fulvestrant 續用，由腫瘤科評估換線 | 仿單正規路徑（兩次 Grade 3 後已無仿單內空間可退） |
+| B. 以 200 mg 再試一次 | 仿單內最後一階（200 mg 錠，不必剝）；配現行 basal-bolus＋metformin，可再加 dapagliflozin 後再挑戰 | 註意：08/14 的 150 mg 失敗**不能直接外推**——當時僅 Toujeo 12＋metformin、無餐前 insulin，降糖火力與現在不同。挑戰日起血糖 QID×3 天，FPG >250 即停 |
+| C. 維持 37.5 mg | 現況 | Off-label、療效無來源、剝錠劑量不準——若選此路，病歷須載明為知情決策 |
+
+### 判讀三：現行計時器
+
+- 第二次中斷（08/15）之 3–5 天窗：**08/17 已達標 ✅**，恢復條件成立（惟恢復劑量如上為爭點）。
+- 21 天永久停藥計時（FPG 未達 ≤160 者適用）**未被觸發**——兩次中斷空腹都在第 2 天回落。本例的問題從來不是「壓不下來」，是「藥一回來就彈」。
+
+### 本次建議（依優先序）
+
+1. **腫瘤科決策 A/B/C 三選一並記錄**（上表）——這是本週最重要的一件事，血糖團隊配合任一選項都有對應方案。
+2. **降糖方案維持並微調**：Toujeo 14 單位＋NovoRapid 8 單位 tid＋metformin 1500 續用。滴定規則：FPG >160 連 2 天 → Toujeo +2 單位；FPG <90 或任一值 <70 → Toujeo −2 單位；**晚餐段峰值 304–354 → 晚餐前 NovoRapid 8 → 10 單位**（每 2–3 天依晚餐後值再 +2）。
+3. **Dapagliflozin 再評估**：血酮複驗 <0.6＋進食正常＋eGFR 複驗 ≥45 三條件到齊 → 恢復 Forxiga 10 mg QD——不經 insulin 路徑、主攻日間高血糖，若走選項 B 尤其值得先上。Sick-day rules 衛教不可省（nausea G1 現在就存在，若惡化到影響進食 → 當日停 SGLT2i 並驗酮）。
+4. **待補檢驗（08/12 之後未見報告）**：creatinine/eGFR（決定 metformin 1500 合規性與上限）、血酮複驗、電解質。HbA1c 7.3（08/07）→ 7.8（08/12）已知，下次 q3mo。
+5. **HR 105 持續竇速**：血糖已改善、輸液進行中仍 >100——複查血色素、感染指標、volume status，不要全部歸因高血糖。
+6. **低血糖預案不變**：若 Piqray 再停（任何原因），**同日** Toujeo 14 → 10–12 單位、NovoRapid 減半或停，metformin 最後動。
+7. **出院規劃**：metformin ≤2000 mg/day（eGFR 45–59 期間）、basal insulin 居家自我滴定表、每日晨間空腹自測且 ≥160 回報、內分泌與腫瘤科共同追蹤；HbA1c 目標 <7.5%。
+
+---
+
 ## 3. 建議（依優先序）
 
 ### 3-1. 🔴 用藥安全——先解決處方重複
@@ -158,7 +213,29 @@ T2DM＋alpelisib＋住院中起始 SGLT2i，逐項確認：①目前進食量足
 
 ---
 
-## 4. SOAP 精簡版（08/14 最新，無縮寫、可直接用）
+## 4. SOAP 精簡版（08/21 最新，無縮寫、可直接用）
+
+**Subjective:** Alpelisib was resumed on August 14 at 150 milligrams once daily (off-label dose), stopped again on August 15 for recurrent Grade 3 hyperglycemia (fasting 305), and restarted on August 18 at one-quarter of a 150-milligram tablet (about 37.5 milligrams) once daily, continuing to date. Grade 1 nausea and Grade 1 fatigue. Eating adequately; no vomiting, abdominal pain, or hypoglycemia symptoms.
+
+**Objective:** Heart rate 105, other vital signs stable, fully alert. Morning fasting glucose: 305 (August 15, on 150 milligrams) → 276 → 160 (August 17, off drug) → 164 (August 18, quarter-tablet started) → **134 → 133 → 158 (August 19–21, three consecutive days at or below 160)**. Daytime pre- and post-meal values 187–354, with dinner-time peaks 304–354. Current regimen since August 15: Toujeo 14 units once daily, insulin aspart 8 units before each meal, metformin 500 milligrams three times daily after meals (1500 milligrams per day). Glycated hemoglobin 7.8% (August 12). Repeat kidney function and blood ketone since August 12: not yet reported.
+
+**Assessment:**
+1. Alpelisib-associated hyperglycemia, second Grade 3 episode (August 15) after resumption at 150 milligrams; fasting glucose again fell within 2 days off drug. On the current combination (quarter-tablet alpelisib plus basal-bolus insulin plus metformin), **fasting glucose — the only value that drives dose decisions — has been at or below 160 for three consecutive days.** Residual dinner-time hyperglycemia 304–354 is an insulin-titration issue, not a trigger for anticancer-drug action.
+2. **The unresolved issue is oncologic, not glycemic: 37.5 milligrams is outside the label.** The prescribing information permits only 300 → 250 → 200 milligrams, mandates permanent discontinuation if a dose below 200 is required, and prohibits splitting the film-coated tablets. No efficacy data exist for 150 or 37.5 milligrams. Per the label pathway, the second Grade 3 episode would have called for resumption at 200 milligrams.
+3. Persistent sinus tachycardia (105) despite improved glucose — needs evaluation beyond hyperglycemia.
+4. Kidney function and ketone reverification still outstanding; these gate both the metformin dose ceiling and any dapagliflozin restart.
+
+**Plan:**
+- **Oncology to choose and document one of three options:** (A) permanently discontinue alpelisib per label and reassess systemic therapy (fulvestrant continues); (B) rechallenge at 200 milligrams — the last on-label dose level, using whole tablets — under the current, stronger glycemic regimen (note: the August 14 failure at 150 milligrams occurred without prandial insulin and is not directly comparable), with glucose four times daily for 3 days and interruption if fasting glucose exceeds 250; or (C) knowingly continue 37.5 milligrams off-label with documentation that efficacy is unestablished and quarter-tablet dosing is imprecise.
+- Continue Toujeo 14 units, insulin aspart 8 units three times daily, metformin 1500 milligrams per day. Titration: fasting above 160 on 2 consecutive days → Toujeo up 2 units; fasting below 90 or any value below 70 → Toujeo down 2 units; **dinner insulin aspart 8 → 10 units for the 304–354 evening peaks.**
+- Recheck creatinine (estimated glomerular filtration rate), blood ketone, and electrolytes; if ketone below 0.6, intake stable, and estimated glomerular filtration rate 45 or above → restart dapagliflozin 10 milligrams once daily (insulin-independent mechanism; targets daytime values; sick-day education mandatory given ongoing Grade 1 nausea).
+- Work up persistent heart rate above 100: hemoglobin, infection markers, volume status.
+- If alpelisib is stopped again for any reason: reduce Toujeo to 10–12 units and halve or stop insulin aspart the same day; metformin last.
+- Discharge planning: metformin at or below 2000 milligrams per day while estimated glomerular filtration rate is 45–59; home basal-insulin self-titration sheet; daily morning fasting self-monitoring with reporting of any value 160 or above; joint endocrinology–oncology follow-up; glycated hemoglobin target below 7.5%.
+
+---
+
+### 前一版本（08/14）
 
 **Subjective:** Alpelisib held since August 11 for Grade 3 hyperglycemia. Feeling well, eating normally; no hypoglycemia symptoms, nausea, or vomiting.
 
