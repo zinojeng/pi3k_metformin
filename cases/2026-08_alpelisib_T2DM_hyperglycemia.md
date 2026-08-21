@@ -213,6 +213,27 @@ T2DM＋alpelisib＋住院中起始 SGLT2i，逐項確認：①目前進食量足
 
 ---
 
+## 4-0. SOAP 短版（08/21，病房交班用）
+
+**S:** Alpelisib 37.5 mg (1/4 of 150 mg tab) daily since 8/18, after second Grade 3 hyperglycemia (FPG 305) on 150 mg rechallenge 8/14–15. Nausea G1, fatigue G1. Eating well; no hypoglycemia.
+
+**O:** FPG 134 → 133 → 158 (8/19–21) — **≤160 for 3 consecutive days**. Daytime values 187–354, dinner peaks 304–354. HR 105, afebrile. Regimen: Toujeo 14 U qd + NovoRapid 8 U tid ac + metformin 500 mg tid pc. HbA1c 7.8% (8/12). Repeat eGFR/ketone: pending.
+
+**A:**
+1. Alpelisib-associated hyperglycemia — FPG at target (Grade 1) on current regimen; residual dinner-time hyperglycemia = insulin-titration issue.
+2. **37.5 mg is off-label** (label: minimum dose level 200 mg, below 200 → permanently discontinue; tablets must not be split) — oncology decision needed: discontinue / rechallenge 200 mg whole tablet / continue off-label with documentation.
+3. Persistent sinus tachycardia 105.
+4. eGFR + ketone reverification outstanding (gates metformin ceiling and dapagliflozin restart).
+
+**P:**
+- Keep Toujeo 14 U + NovoRapid 8 U tid + metformin 1500 mg/day; **dinner NovoRapid 8 → 10 U** for evening peaks; Toujeo +2 U if FPG >160 ×2 days, −2 U if FPG <90 or any value <70.
+- Recheck creatinine/eGFR, blood ketone, electrolytes; if ketone <0.6 + eGFR ≥45 + eating well → restart dapagliflozin 10 mg qd (sick-day education).
+- Oncology to choose and document alpelisib option (discontinue / 200 mg rechallenge / off-label 37.5 mg).
+- Work up HR >100 (hemoglobin, infection, volume).
+- If alpelisib stopped again → reduce insulin the **same day** (Toujeo → 10–12 U, halve/stop NovoRapid).
+
+---
+
 ## 4. SOAP 精簡版（08/21 最新，無縮寫、可直接用）
 
 **Subjective:** Alpelisib was resumed on August 14 at 150 milligrams once daily (off-label dose), stopped again on August 15 for recurrent Grade 3 hyperglycemia (fasting 305), and restarted on August 18 at one-quarter of a 150-milligram tablet (about 37.5 milligrams) once daily, continuing to date. Grade 1 nausea and Grade 1 fatigue. Eating adequately; no vomiting, abdominal pain, or hypoglycemia symptoms.
