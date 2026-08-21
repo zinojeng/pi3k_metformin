@@ -112,7 +112,9 @@
 
 ### 實際發生的事（08/14–08/21）
 
-團隊於 08/14 恢復 Piqray，但劑量是 **150 mg（1# QD）**，而非仿單減一階的 250 mg；當晚血糖即衝 377，08/15 晨間空腹 **305 → 二度 Grade 3 → 再停藥**。08/15 起降糖方案定為 **Toujeo 14 單位 QD＋NovoRapid 8 單位 TID AC＋Glucophage 1# TID PC（1500 mg/day）**。停藥後空腹再次於第 2 天回落達標（160，08/17）——與第一次中斷完全相同的 24–72 小時規律。08/18 起改以 **150 mg 之 1/4 錠（約 37.5 mg）QD** 續用至今。
+依醫囑紀錄（TPQR，Piqray 150 mg/tab）：**300 mg（2 tab）QD 自 08/07 14:42 → 08/11 09:34 取消**（第一次 Grade 3 hold）；**150 mg（1 tab）ST 於 08/14 14:05** 給藥一劑，**08/15 09:00 之 1 tab QD 醫囑於當日 13:55 取消**——即 150 mg 實際只給了 08/14（±08/15 晨）一至兩劑；當晚血糖即衝 377，08/15 晨間空腹 **305 → 二度 Grade 3 → 停藥**。08/15 起降糖方案定為 **Toujeo 14 單位 QD＋NovoRapid 8 單位 TID AC＋Glucophage 1# TID PC（1500 mg/day）**。停藥後空腹再次於第 2 天回落達標（160，08/17）——與第一次中斷完全相同的 24–72 小時規律，且此回落**發生於停藥期**（非 1/4 錠之效果）。**08/18 16:59 起以 150 mg 之 1/4 錠（約 37.5 mg）QD** 執行至今（醫囑效期至 08/22）。
+
+**關鍵背景：本院藥局只有 150 mg 錠一種規格**——仿單減量階梯所需的 250 mg（200 mg＋50 mg 各一錠）與 200 mg（200 mg 錠）在現有庫存下**組不出來**，這是團隊走上 150 → 1/4 錠這條仿單外路徑的實際原因。
 
 | 日期 | 晨間空腹 | 日間值（AC/PC） | Piqray | 事件 |
 |---|---|---|---|---|
@@ -120,7 +122,7 @@
 | 08/15 | **305** ❌ | 290(PC)／349／451 | 停 | **二度 Grade 3 → 再停藥**；Toujeo 上調 14 單位、重啟 NovoRapid 8 單位 tid ac |
 | 08/16 | 276 | 287／303／213(PC) | 停 | |
 | 08/17 | **160** ✅ | 229／219／327 | 停 | 停藥第 2 天空腹達標（3–5 天窗內，第二次驗證回落規律） |
-| 08/18 | 164 | 146／184／178 | **37.5 mg（1/4#）起** | 164 為 Grade 2 下緣（血糖機 ±15% 邊際值） |
+| 08/18 | 164 | 146／184／178 | **37.5 mg（1/4#）自 16:59 起** | 164 為 Grade 2 下緣（±15% 邊際值）；本日日間值仍屬停藥狀態 |
 | 08/19 | **134** ✅ | 247／229／354／287 | 37.5 mg | 晚間峰 354 |
 | 08/20 | **133** ✅ | 233／304／322／187 | 37.5 mg | HR 105 |
 | 08/21 | **158** ✅ | 266（午前） | 37.5 mg | 本日；nausea G1、fatigue G1 |
@@ -135,7 +137,7 @@
 
 - 減量階梯只有 **300 → 250 → 200 mg**，最多減兩階；「若需減至 200 mg 以下，**永久停用 PIQRAY**」（Table 1 註 2）。
 - 錠劑須整顆吞服，「**不可咀嚼、壓碎或剝半**」；破損不完整之錠劑不可服用——1/4 錠除了劑量本身仿單外，膜衣錠剝切後實際暴露量也無法保證。
-- 依仿單邏輯走：08/11 第一次 Grade 3 → 應以 250 恢復；08/15 第二次 Grade 3 → 應以 **200 mg**（第二階）恢復。團隊實際走了 150 → 37.5，等於已離開仿單路徑兩步。
+- 依仿單邏輯走：08/11 第一次 Grade 3 → 應以 250 恢復；08/15 第二次 Grade 3 → 應以 **200 mg**（第二階）恢復。團隊實際走了 150 → 37.5，等於已離開仿單路徑兩步——**但這不是判讀錯誤，是庫存限制**：仿單劑量需要 200 mg 與 50 mg 錠（美國仿單載明錠劑規格為 50、150、200 mg 三種【L1，`來源/label_alpelisib.md`】），本院只有 150 mg 錠，250/200 mg 皆無法組成，而 150 mg 本身也不是仿單內的任何一階。
 - **150 mg 與 37.5 mg 的抗癌療效，本回顧未取得可驗證來源**（SOLAR-1 減量階梯同樣止於 200 mg/day【L2，`來源/fulltext_facts_SOLAR1.md`】）。37.5 mg 目前「血糖可控」的代價可能是「療效未知」。
 
 **給腫瘤科的三個選項（需明確擇一並記錄於病歷）：**
@@ -143,7 +145,7 @@
 | 選項 | 內容 | 依據與代價 |
 |---|---|---|
 | A. 依仿單停藥 | 永久停用 alpelisib，fulvestrant 續用，由腫瘤科評估換線 | 仿單正規路徑（兩次 Grade 3 後已無仿單內空間可退） |
-| B. 以 200 mg 再試一次 | 仿單內最後一階（200 mg 錠，不必剝）；配現行 basal-bolus＋metformin，可再加 dapagliflozin 後再挑戰 | 註意：08/14 的 150 mg 失敗**不能直接外推**——當時僅 Toujeo 12＋metformin、無餐前 insulin，降糖火力與現在不同。挑戰日起血糖 QID×3 天，FPG >250 即停 |
+| B. 以 200 mg 再試一次 | 仿單內最後一階（200 mg 錠，不必剝）；配現行 basal-bolus＋metformin，可再加 dapagliflozin 後再挑戰 | **前提是藥局／藥廠專案調到 200 mg 錠**（本院現只有 150 mg）。註意：08/14 的 150 mg 失敗**不能直接外推**——當時僅 Toujeo 12＋metformin、無餐前 insulin，降糖火力與現在不同。挑戰日起血糖 QID×3 天，FPG >250 即停 |
 | C. 維持 37.5 mg | 現況 | Off-label、療效無來源、剝錠劑量不準——若選此路，病歷須載明為知情決策 |
 
 ### 判讀三：現行計時器
@@ -215,13 +217,13 @@ T2DM＋alpelisib＋住院中起始 SGLT2i，逐項確認：①目前進食量足
 
 ## 4-0. SOAP 短版（08/21，病房交班用）
 
-**S:** Alpelisib 37.5 mg (1/4 of 150 mg tab) daily since 8/18, after second Grade 3 hyperglycemia (FPG 305) on 150 mg rechallenge 8/14–15. Nausea G1, fatigue G1. Eating well; no hypoglycemia.
+**S:** Alpelisib course (per MAR): 300 mg (2×150 mg tab) qd 8/7 → held 8/11 (first Grade 3); 150 mg ×1–2 doses 8/14–15 → cancelled 8/15 13:55 (second Grade 3, FPG 305); off drug 8/15–8/18; **1/4 tab (37.5 mg) qd since 8/18 16:59**. Nausea G1, fatigue G1. Eating well; no hypoglycemia.
 
 **O:** FPG 134 → 133 → 158 (8/19–21) — **≤160 for 3 consecutive days**. Daytime values 187–354, dinner peaks 304–354. HR 105, afebrile. Regimen: Toujeo 14 U qd + NovoRapid 8 U tid ac + metformin 500 mg tid pc. HbA1c 7.8% (8/12). Repeat eGFR/ketone: pending.
 
 **A:**
 1. Alpelisib-associated hyperglycemia — FPG at target (Grade 1) on current regimen; residual dinner-time hyperglycemia = insulin-titration issue.
-2. **37.5 mg is off-label** (label: minimum dose level 200 mg, below 200 → permanently discontinue; tablets must not be split) — oncology decision needed: discontinue / rechallenge 200 mg whole tablet / continue off-label with documentation.
+2. **37.5 mg is off-label** — per PIQRAY label: dose ladder only 300 → 250 → 200 mg (max 2 reductions); **below 200 mg → permanently discontinue** (Table 1 note 2); tablets must be swallowed whole, **no splitting/crushing** (quartered film-coated tab = exposure not guaranteed). Label path after 2nd Grade 3 = resume at 200 mg, **but hospital stocks 150 mg tablets only** (label doses need 200 mg ± 50 mg tabs) — hence the off-label 150 → 37.5 path. No efficacy data for any dose <200 mg (SOLAR-1 ladder also stopped at 200). Oncology decision needed: discontinue / rechallenge 200 mg (needs procurement) / continue off-label with documentation.
 3. Persistent sinus tachycardia 105.
 4. eGFR + ketone reverification outstanding (gates metformin ceiling and dapagliflozin restart).
 
@@ -236,18 +238,18 @@ T2DM＋alpelisib＋住院中起始 SGLT2i，逐項確認：①目前進食量足
 
 ## 4. SOAP 精簡版（08/21 最新，無縮寫、可直接用）
 
-**Subjective:** Alpelisib was resumed on August 14 at 150 milligrams once daily (off-label dose), stopped again on August 15 for recurrent Grade 3 hyperglycemia (fasting 305), and restarted on August 18 at one-quarter of a 150-milligram tablet (about 37.5 milligrams) once daily, continuing to date. Grade 1 nausea and Grade 1 fatigue. Eating adequately; no vomiting, abdominal pain, or hypoglycemia symptoms.
+**Subjective:** Per the medication administration record, alpelisib 300 milligrams (two 150-milligram tablets) daily ran from August 7 until the order was cancelled on August 11 (first Grade 3 hold); a single 150-milligram dose was given August 14 (14:05), and the 150-milligram daily order starting August 15 was cancelled the same day at 13:55 for recurrent Grade 3 hyperglycemia (fasting 305); the drug was then off until **one-quarter of a 150-milligram tablet (about 37.5 milligrams) once daily was started August 18 at 16:59**, continuing to date. Grade 1 nausea and Grade 1 fatigue. Eating adequately; no vomiting, abdominal pain, or hypoglycemia symptoms.
 
 **Objective:** Heart rate 105, other vital signs stable, fully alert. Morning fasting glucose: 305 (August 15, on 150 milligrams) → 276 → 160 (August 17, off drug) → 164 (August 18, quarter-tablet started) → **134 → 133 → 158 (August 19–21, three consecutive days at or below 160)**. Daytime pre- and post-meal values 187–354, with dinner-time peaks 304–354. Current regimen since August 15: Toujeo 14 units once daily, insulin aspart 8 units before each meal, metformin 500 milligrams three times daily after meals (1500 milligrams per day). Glycated hemoglobin 7.8% (August 12). Repeat kidney function and blood ketone since August 12: not yet reported.
 
 **Assessment:**
 1. Alpelisib-associated hyperglycemia, second Grade 3 episode (August 15) after resumption at 150 milligrams; fasting glucose again fell within 2 days off drug. On the current combination (quarter-tablet alpelisib plus basal-bolus insulin plus metformin), **fasting glucose — the only value that drives dose decisions — has been at or below 160 for three consecutive days.** Residual dinner-time hyperglycemia 304–354 is an insulin-titration issue, not a trigger for anticancer-drug action.
-2. **The unresolved issue is oncologic, not glycemic: 37.5 milligrams is outside the label.** The prescribing information permits only 300 → 250 → 200 milligrams, mandates permanent discontinuation if a dose below 200 is required, and prohibits splitting the film-coated tablets. No efficacy data exist for 150 or 37.5 milligrams. Per the label pathway, the second Grade 3 episode would have called for resumption at 200 milligrams.
+2. **The unresolved issue is oncologic, not glycemic: current dosing is outside the prescribing information, driven by a pharmacy stock constraint.** Per the PIQRAY prescribing information: (a) only two dose reductions are permitted — 300 → 250 → 200 milligrams once daily — and if further reduction below 200 milligrams is required, PIQRAY must be **permanently discontinued** (Table 1, footnote 2); (b) tablets must be swallowed whole — they "should not be chewed, crushed or split," and no broken or cracked tablet should be ingested — so the true systemic exposure from a quartered film-coated tablet cannot be guaranteed; (c) the label pathway after the first Grade 3 episode (August 11) was resumption at 250 milligrams (one 200-milligram plus one 50-milligram tablet) and, after the second episode (August 15), at 200 milligrams — **but this hospital stocks only the 150-milligram tablet**, so neither on-label reduced dose could be composed, and 150 milligrams itself is not a label dose level; (d) no efficacy data exist for 150 or 37.5 milligrams — the SOLAR-1 trial's reduction ladder likewise stopped at 200 milligrams per day. The current state of "glucose is controllable" may therefore be purchased at the price of unestablished anticancer efficacy, and this trade-off is the decision now before the oncology team.
 3. Persistent sinus tachycardia (105) despite improved glucose — needs evaluation beyond hyperglycemia.
 4. Kidney function and ketone reverification still outstanding; these gate both the metformin dose ceiling and any dapagliflozin restart.
 
 **Plan:**
-- **Oncology to choose and document one of three options:** (A) permanently discontinue alpelisib per label and reassess systemic therapy (fulvestrant continues); (B) rechallenge at 200 milligrams — the last on-label dose level, using whole tablets — under the current, stronger glycemic regimen (note: the August 14 failure at 150 milligrams occurred without prandial insulin and is not directly comparable), with glucose four times daily for 3 days and interruption if fasting glucose exceeds 250; or (C) knowingly continue 37.5 milligrams off-label with documentation that efficacy is unestablished and quarter-tablet dosing is imprecise.
+- **Oncology to choose and document one of three options:** (A) permanently discontinue alpelisib per label and reassess systemic therapy (fulvestrant continues); (B) rechallenge at 200 milligrams — the last on-label dose level, using whole tablets, **which requires the pharmacy to procure 200-milligram tablets** (only 150-milligram tablets are currently stocked) — under the current, stronger glycemic regimen (note: the August 14 failure at 150 milligrams occurred without prandial insulin and is not directly comparable), with glucose four times daily for 3 days and interruption if fasting glucose exceeds 250; or (C) knowingly continue 37.5 milligrams off-label with documentation that efficacy is unestablished and quarter-tablet dosing is imprecise.
 - Continue Toujeo 14 units, insulin aspart 8 units three times daily, metformin 1500 milligrams per day. Titration: fasting above 160 on 2 consecutive days → Toujeo up 2 units; fasting below 90 or any value below 70 → Toujeo down 2 units; **dinner insulin aspart 8 → 10 units for the 304–354 evening peaks.**
 - Recheck creatinine (estimated glomerular filtration rate), blood ketone, and electrolytes; if ketone below 0.6, intake stable, and estimated glomerular filtration rate 45 or above → restart dapagliflozin 10 milligrams once daily (insulin-independent mechanism; targets daytime values; sick-day education mandatory given ongoing Grade 1 nausea).
 - Work up persistent heart rate above 100: hemoglobin, infection markers, volume status.
