@@ -2,7 +2,7 @@
 
 > 去識別化案例（已移除病歷號、醫師姓名、確切年齡與歷年治療日期），供教學與 protocol 對照使用。依據：`PROTOCOL.md`（§1.1、§3、§4.1、§7、附錄 C）。**非個別醫療指示，劑量決策由主治團隊確認。**
 >
-> **連續性說明**：本例的腫瘤特徵、共病、用藥與 `2026-08_alpelisib_T2DM_hyperglycemia.md` 高度吻合（左乳 IDC stage IV、ER/PR 100%＋/HER2−、T2DM＋高血壓、Exforge、alpelisib），**疑似同一病人**；以下判讀以此為前提，**請臨床端確認**。若確為同一人，08 月的兩次 Grade 3 與酮症事件即為本次評估的關鍵既往史。
+> **連續性說明**：本例的腫瘤特徵、共病、用藥與 `2026-08_alpelisib_T2DM_hyperglycemia.md` 高度吻合（左乳 IDC stage IV、ER/PR 100%＋/HER2−、T2DM＋高血壓、Exforge、alpelisib），**臨床端已確認為同一病人**（2026-10-06）。08 月的兩次 Grade 3 與酮症事件即為本次評估的關鍵既往史。08/21 之後的 alpelisib 劑量與 FPG 由臨床端補充中（見 §5）。
 
 ---
 
