@@ -17,3 +17,6 @@ PI3Kα抑制劑相關高血糖與metformin.md
 撰寫方法論.md
 Icon
 cases/Icon
+
+# raw lab/chart exports (contain patient identifiers)
+[0-9][0-9][0-9][0-9][0-9][0-9][0-9] *.md
